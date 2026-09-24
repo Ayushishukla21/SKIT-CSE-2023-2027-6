@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment files
+.env
+.env.*
+
+# Keep example environment file
+!.env.example
+
+# Node
+node_modules/
+
+# Build files
+dist/
+build/
+
+# ZIP backups
+*.zip
+
+# Test/cache
+.pytest_cache/
+.coverage
