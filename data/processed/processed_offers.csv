@@ -1,0 +1,3 @@
+id,product_id,platform_id,title,description,discount_amount,is_active
+1,2,1,Flat ₹10 off,,10.0,True
+2,6,3,Save ₹2,,2.0,True
