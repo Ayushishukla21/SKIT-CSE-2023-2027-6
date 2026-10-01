@@ -1,5 +1,7 @@
 function PlatformPriceCard({ entry, isBest }) {
-  const cardClass = `sc-platform-card${isBest ? ' is-best' : ''}${!entry.available ? ' is-unavailable' : ''}`
+  const cardClass = `sc-platform-card${isBest ? ' is-best' : ''}${!entry.available ? ' is-unavailable' : ''}${
+    entry.noData ? ' is-nodata' : ''
+  }`
 
   return (
     <div className={cardClass}>
@@ -12,6 +14,8 @@ function PlatformPriceCard({ entry, isBest }) {
         <p className="h5 mb-1" style={{ color: 'var(--sc-forest)' }}>
           &#8377;{entry.price.toFixed(2)}
         </p>
+      ) : entry.noData ? (
+        <p className="h6 text-muted mb-1">No data yet</p>
       ) : (
         <p className="h6 text-muted mb-1">Unavailable</p>
       )}
@@ -20,6 +24,7 @@ function PlatformPriceCard({ entry, isBest }) {
         <span className="sc-offer-tag d-inline-block mt-1">
           {entry.offer.title}
           {entry.offer.discount_amount != null ? ` (₹${entry.offer.discount_amount.toFixed(2)} off)` : ''}
+          {entry.offer.description ? ` — ${entry.offer.description}` : ''}
         </span>
       )}
     </div>

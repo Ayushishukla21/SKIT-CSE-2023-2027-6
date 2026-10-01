@@ -226,6 +226,11 @@ a:hover {
   opacity: 0.6;
 }
 
+.sc-platform-card.is-unavailable.is-nodata {
+  opacity: 0.45;
+  border-style: dashed;
+}
+
 .sc-best-tag {
   background-color: var(--sc-gold);
   color: var(--sc-ink);
