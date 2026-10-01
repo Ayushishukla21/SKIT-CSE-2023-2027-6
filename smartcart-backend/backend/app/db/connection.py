@@ -6,11 +6,12 @@ get_connection() and closes it when done. This keeps things simple and
 beginner-friendly (no connection pool to reason about) while still being
 safe for a small demo API.
 """
-
 import os
 
+from dotenv import load_dotenv
 import mysql.connector
 
+load_dotenv()
 
 def get_db_config():
     return {
