@@ -31,7 +31,7 @@ CREATE INDEX idx_products_category ON products (category);
 CREATE INDEX idx_products_name ON products (name);
 CREATE INDEX idx_products_brand ON products (brand);
 
--- One CURRENT price per product per platform (this milestone has no history table)
+-- One CURRENT price per product per platform (changes are logged in price_history)
 CREATE TABLE IF NOT EXISTS prices (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     product_id  INT NOT NULL,
@@ -46,6 +46,26 @@ CREATE TABLE IF NOT EXISTS prices (
         FOREIGN KEY (platform_id) REFERENCES platforms (id) ON DELETE CASCADE,
     CONSTRAINT uq_prices_product_platform UNIQUE (product_id, platform_id)
 );
+
+-- Append-only log of price changes written by the price-monitoring workflow
+-- (app/services/price_monitor_service.py). `prices` stays the single source
+-- of the CURRENT price; this table only records what it used to be.
+CREATE TABLE IF NOT EXISTS price_history (
+    id          INT AUTO_INCREMENT PRIMARY KEY,
+    product_id  INT NOT NULL,
+    platform_id INT NOT NULL,
+    price       DECIMAL(10,2) NULL,     -- NULL when available = FALSE
+    currency    VARCHAR(10) NOT NULL DEFAULT 'INR',
+    available   BOOLEAN NOT NULL,
+    recorded_at DATETIME NOT NULL,      -- observation time (UTC)
+    CONSTRAINT fk_history_product
+        FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE CASCADE,
+    CONSTRAINT fk_history_platform
+        FOREIGN KEY (platform_id) REFERENCES platforms (id) ON DELETE CASCADE,
+    CONSTRAINT uq_history_obs UNIQUE (product_id, platform_id, recorded_at)
+);
+
+CREATE INDEX idx_history_product_platform ON price_history (product_id, platform_id, recorded_at);
 
 CREATE TABLE IF NOT EXISTS offers (
     id               INT PRIMARY KEY,
@@ -64,4 +84,4 @@ CREATE TABLE IF NOT EXISTS offers (
 CREATE INDEX idx_offers_product_platform ON offers (product_id, platform_id);
 
 -- Reserved for a later milestone (see DATA_SCHEMA.md section 8) - not used yet:
--- price_history, users, recommendations, alerts, budgets, product_aliases
+-- users, recommendations, alerts, budgets, product_aliases

@@ -135,3 +135,12 @@ Implemented: the 5 contract endpoints, standard error envelope, JSON
 Not implemented (future milestones, by design): ML prediction,
 recommendations, budget planner, chatbot, notifications, Azure deployment,
 payments, advanced scraping.
+
+## Price monitoring (Sprint 3)
+
+`app/services/price_monitor_service.py` validates and applies incoming price
+records (`update_price`, `update_prices`): the latest price goes into `prices`,
+real changes are logged in `price_history` (run `schema.sql` again to create it).
+Repeated identical updates are no-ops; unavailable = `price NULL` + `available false`.
+Load a CSV through it with `python update_prices.py [file.csv]`.
+Tests: `python -m pytest` (`tests/test_price_monitor.py` needs no MySQL).

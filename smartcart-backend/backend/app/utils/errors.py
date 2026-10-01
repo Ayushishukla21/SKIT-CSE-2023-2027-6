@@ -29,6 +29,14 @@ def invalid_product_id(message="Product ID must be a positive integer"):
     return ApiError("INVALID_PRODUCT_ID", message, 400)
 
 
+def invalid_platform_id(message="Platform ID must be an integer from 1 to 4"):
+    return ApiError("INVALID_PLATFORM_ID", message, 400)
+
+
+def invalid_price(message="Price must be a positive number"):
+    return ApiError("INVALID_PRICE", message, 400)
+
+
 def product_not_found(message="Product not found"):
     return ApiError("PRODUCT_NOT_FOUND", message, 404)
 
