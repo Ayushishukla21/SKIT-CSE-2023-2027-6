@@ -1,0 +1,5 @@
+product_id,platform_id,price,currency,available,updated_at
+1,1,68.0,INR,True,2026-10-01T10:00:00Z
+2,1,265.0,INR,True,2026-10-01T10:05:00Z
+3,2,28.0,INR,True,2026-10-01T10:10:00Z
+4,3,145.0,INR,True,2026-10-01T10:15:00Z

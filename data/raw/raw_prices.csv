@@ -1,0 +1,6 @@
+product_id,platform,product_name,price,available,quantity,unit,timestamp
+1,Blinkit, Amul Taaza Milk ,₹68.00,true,500,ml,2026-10-01T10:00:00Z
+2, blinkit ,Aashirvaad Atta, 265.00 ,true,5,kg,2026-10-01T10:05:00Z
+3,ZEpto,Tata Salt,₹28,true,1,kg,2026-10-01T10:10:00Z
+4,Instamart,Tata Tea,145,true,250,g,2026-10-01T10:15:00Z
+5,Flipkart Minutes,Maggi 2-Minute Noodles,14,false,70,g,2026-10-01T10:20:00Z
