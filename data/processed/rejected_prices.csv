@@ -1,0 +1,2 @@
+row,reason,record
+5,Unavailable product must have no price,"{'product_id': '5', 'platform': 'Flipkart Minutes', 'product_name': 'Maggi 2-Minute Noodles', 'price': '14', 'available': 'false', 'quantity': '70', 'unit': 'g', 'timestamp': '2026-10-01T10:20:00Z'}"
