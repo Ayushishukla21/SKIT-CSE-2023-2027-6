@@ -1,6 +1,7 @@
 import re
 from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
+import pandas as pd
 
 
 PLATFORM_MAP = {
@@ -296,8 +297,8 @@ if __name__ == "__main__":
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    with open(raw_file, "r", encoding="utf-8", newline="") as file:
-        records = list(csv.DictReader(file))
+    raw_df = pd.read_csv(raw_file)
+    records = raw_df.where(raw_df.notna(), None).to_dict(orient="records")
 
     with open(base_dir / "data" / "products.csv", "r", encoding="utf-8", newline="") as file:
         product_rows = csv.DictReader(file)
