@@ -3,6 +3,7 @@ GET /api/products
 GET /api/products/<id>
 GET /api/products/search?q=<query>
 GET /api/products/<id>/compare
+GET /api/products/<id>/history[?platform_id=1-4]
 
 The /search route is declared before the /<raw_id> route in this file for
 readability. Flask/Werkzeug already prefers the static "search" segment
@@ -14,8 +15,13 @@ generic 404.
 
 from flask import Blueprint, jsonify, request
 
-from app.services import comparison_service, product_service, search_service
-from app.utils.validators import validate_pagination, validate_product_id, validate_search_query
+from app.services import comparison_service, history_service, product_service, search_service
+from app.utils.validators import (
+    validate_optional_platform_id,
+    validate_pagination,
+    validate_product_id,
+    validate_search_query,
+)
 
 products_bp = Blueprint("products", __name__)
 
@@ -46,4 +52,12 @@ def get_product(raw_id):
 def compare_product(raw_id):
     product_id = validate_product_id(raw_id)
     result = comparison_service.get_comparison(product_id)
+    return jsonify(result), 200
+
+
+@products_bp.route("/products/<raw_id>/history", methods=["GET"])
+def product_history(raw_id):
+    product_id = validate_product_id(raw_id)
+    platform_id = validate_optional_platform_id(request.args.get("platform_id"))
+    result = history_service.get_history(product_id, platform_id)
     return jsonify(result), 200

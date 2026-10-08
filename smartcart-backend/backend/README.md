@@ -144,3 +144,17 @@ real changes are logged in `price_history` (run `schema.sql` again to create it)
 Repeated identical updates are no-ops; unavailable = `price NULL` + `available false`.
 Load a CSV through it with `python update_prices.py [file.csv]`.
 Tests: `python -m pytest` (`tests/test_price_monitor.py` needs no MySQL).
+
+### Price history retrieval
+
+`GET /api/products/<id>/history[?platform_id=1-4]` returns every logged observation
+(oldest first, then platform_id) as
+`{"product_id": 1, "history": [{"platform_id", "price", "currency", "available", "recorded_at"}]}`.
+Unavailable observations have `price: null`; a product with no history returns `"history": []`.
+Errors use the standard format (`INVALID_PRODUCT_ID`, `INVALID_PLATFORM_ID`, `PRODUCT_NOT_FOUND`, `DATABASE_ERROR`).
+No existing endpoint or table changed; `price_history` is append-only and unique on
+(product, platform, recorded_at), so the same platform at different times is never a duplicate.
+
+Demo: `python update_prices.py --demo` (uses a temporary product; shows insert, idempotent repeat,
+stale rejection, price change, unavailable, validation error, then the history).
+Tests: `tests/test_history.py` needs MySQL (it creates/removes its own product 9001).
