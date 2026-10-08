@@ -3,7 +3,12 @@ Validation for path/query parameters, kept separate from routes so the
 rules from API_CONTRACT.md are easy to find and test in one place.
 """
 
-from app.utils.errors import empty_search_query, invalid_parameter, invalid_product_id
+from app.utils.errors import (
+    empty_search_query,
+    invalid_parameter,
+    invalid_platform_id,
+    invalid_product_id,
+)
 
 
 def validate_product_id(raw_id):
@@ -77,3 +82,13 @@ def validate_search_query(q_raw, limit_raw):
         limit = int(text)
 
     return query, limit
+
+
+def validate_optional_platform_id(raw):
+    """Optional ?platform_id= filter (1-4). Missing/blank -> None."""
+    if raw is None or str(raw).strip() == "":
+        return None
+    text = str(raw).strip()
+    if not text.isdigit() or not 1 <= int(text) <= 4:
+        raise invalid_platform_id()
+    return int(text)
