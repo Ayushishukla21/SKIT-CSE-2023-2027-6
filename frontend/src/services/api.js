@@ -7,6 +7,7 @@
  *   getProductById(id)
  *   searchProducts(query, limit)
  *   compareProduct(id)
+ *   getProductHistory(id, platformId)
  *
  * Components must never call fetch/axios directly and must never import
  * mockData.js directly — everything goes through this file.
@@ -120,4 +121,15 @@ export async function compareProduct(id) {
     return mock.mockCompareProduct(id)
   }
   return request(`/products/${encodeURIComponent(id)}/compare`)
+}
+
+/* ---------------------------------------------------------------- */
+/* GET /api/products/<id>/history[?platform_id=<id>]                 */
+/* ---------------------------------------------------------------- */
+export async function getProductHistory(id, platformId) {
+  if (USE_MOCK) {
+    // No mock history exists by design — never fabricate price history.
+    throw new ApiError('MOCK_UNSUPPORTED', 'Price history is not available in mock mode.')
+  }
+  return request(`/products/${encodeURIComponent(id)}/history`, { platform_id: platformId })
 }

@@ -355,3 +355,16 @@ a:hover {
     margin-top: -1.6rem;
   }
 }
+/* ===== Price History ===== */
+.sc-history-card {
+  background: #fff;
+  border-radius: var(--sc-radius-md);
+  box-shadow: var(--sc-shadow);
+}
+
+.sc-history-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
