@@ -15,7 +15,7 @@ generic 404.
 
 from flask import Blueprint, jsonify, request
 
-from app.services import comparison_service, history_service, product_service, search_service
+from app.services import comparison_service, history_service, prediction_service, product_service, search_service
 from app.utils.validators import (
     validate_optional_platform_id,
     validate_pagination,
@@ -54,10 +54,20 @@ def compare_product(raw_id):
     result = comparison_service.get_comparison(product_id)
     return jsonify(result), 200
 
+@products_bp.route("/products/<raw_id>/prediction", methods=["GET"])
+def product_prediction(raw_id):
+    product_id = validate_product_id(raw_id)
+    platform_id = validate_optional_platform_id(request.args.get("platform_id"))
+    result = prediction_service.get_prediction(
+        product_id, platform_id, request.args.get("days")
+    )
+    return jsonify(result), 200
 
 @products_bp.route("/products/<raw_id>/history", methods=["GET"])
 def product_history(raw_id):
     product_id = validate_product_id(raw_id)
-    platform_id = validate_optional_platform_id(request.args.get("platform_id"))
+    platform_id = validate_optional_platform_id(
+        request.args.get("platform_id")
+    )
     result = history_service.get_history(product_id, platform_id)
     return jsonify(result), 200

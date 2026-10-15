@@ -63,3 +63,8 @@ def route_not_found(message="The requested URL was not found"):
 
 def method_not_allowed(message="This HTTP method is not allowed for this route"):
     return ApiError("METHOD_NOT_ALLOWED", message, 405)
+
+def prediction_unavailable(
+    message="Price prediction is not available yet for this product"
+):
+    return ApiError("PREDICTION_UNAVAILABLE", message, 404)
