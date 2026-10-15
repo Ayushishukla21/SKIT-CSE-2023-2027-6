@@ -27,10 +27,11 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000
  * human-readable `message`, so pages never need to parse raw responses.
  */
 export class ApiError extends Error {
-  constructor(code, message) {
+  constructor(code, message, status) {
     super(message)
     this.name = 'ApiError'
     this.code = code
+    this.status = status
   }
 }
 
@@ -59,14 +60,15 @@ async function request(path, params = {}) {
   try {
     data = await response.json()
   } catch (err) {
-    throw new ApiError('INTERNAL_SERVER_ERROR', 'Received an invalid response from the server.')
+    throw new ApiError('INTERNAL_SERVER_ERROR', 'Received an invalid response from the server.', response.status)
   }
 
   if (!response.ok) {
     const errorInfo = data && data.error ? data.error : {}
     throw new ApiError(
       errorInfo.code || 'INTERNAL_SERVER_ERROR',
-      errorInfo.message || 'Something went wrong. Please try again later.'
+      errorInfo.message || 'Something went wrong. Please try again later.',
+      response.status
     )
   }
 
@@ -132,4 +134,17 @@ export async function getProductHistory(id, platformId) {
     throw new ApiError('MOCK_UNSUPPORTED', 'Price history is not available in mock mode.')
   }
   return request(`/products/${encodeURIComponent(id)}/history`, { platform_id: platformId })
+}
+
+/* ---------------------------------------------------------------- */
+/* GET /api/products/<id>/prediction[?platform_id=<id>&days=<n>]     */
+/* PROPOSED contract (not yet in API_CONTRACT.md / Flask backend).   */
+/* A 404 means "prediction not available yet" in the UI.             */
+/* ---------------------------------------------------------------- */
+export async function getProductPrediction(id, platformId, days) {
+  if (USE_MOCK) {
+    // Never fabricate predictions in mock mode.
+    throw new ApiError('MOCK_UNSUPPORTED', 'Price prediction is not available in mock mode.', 404)
+  }
+  return request(`/products/${encodeURIComponent(id)}/prediction`, { platform_id: platformId, days })
 }
