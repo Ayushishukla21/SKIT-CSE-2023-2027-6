@@ -92,3 +92,25 @@ def validate_optional_platform_id(raw):
     if not text.isdigit() or not 1 <= int(text) <= 4:
         raise invalid_platform_id()
     return int(text)
+
+
+MAX_PREDICTION_DAYS = 365
+
+
+def validate_optional_days(raw):
+    """
+    Optional ?days= forecast horizon for the prediction endpoint.
+    Missing/blank -> None. Otherwise a whole number from 1 to 365
+    ("0", "-1", "7.5", "x" raise INVALID_PARAMETER).
+    """
+    if raw is None or str(raw).strip() == "":
+        return None
+    text = str(raw).strip()
+    if not text.isascii() or not text.isdigit():
+        raise invalid_parameter("days must be a positive integer")
+    value = int(text)
+    if not 1 <= value <= MAX_PREDICTION_DAYS:
+        raise invalid_parameter(
+            f"days must be an integer between 1 and {MAX_PREDICTION_DAYS}"
+        )
+    return value
