@@ -18,7 +18,8 @@ import { getProductHistory, getProductPrediction } from '../services/api'
  * Nothing here is generated client-side: no response => "not available".
  */
 
-const PLATFORMS = [
+// Fallback only. When the compare response is available, platforms come from it.
+const FALLBACK_PLATFORMS = [
   { id: 1, name: 'Blinkit' },
   { id: 2, name: 'Zepto' },
   { id: 3, name: 'Instamart' },
@@ -29,6 +30,22 @@ const HIST_COLOR = '#2d6a4f'
 const PRED_COLOR = '#e76f51'
 
 const money = (v) => `₹${Number(v).toFixed(2)}`
+const isNum = (v) => v !== null && v !== '' && v !== undefined && Number.isFinite(Number(v))
+
+// Map an API error to a UI state. Only the explicit backend code means
+// "no prediction yet"; PRODUCT_NOT_FOUND etc. are real errors, not 'unavailable'.
+export function classifyPredictionError(err) {
+  if (err && (err.code === 'PREDICTION_UNAVAILABLE' || err.code === 'MOCK_UNSUPPORTED')) return 'unavailable'
+  if (err && (err.code === 'PRODUCT_NOT_FOUND' || err.code === 'INVALID_PRODUCT_ID')) return 'notfound'
+  return 'error'
+}
+
+export function platformOptions(prices) {
+  const list = Array.isArray(prices)
+    ? prices.filter((p) => p && p.platform_id != null).map((p) => ({ id: p.platform_id, name: p.platform, available: p.available !== false }))
+    : []
+  return list.length ? list : FALLBACK_PLATFORMS.map((p) => ({ ...p, available: true }))
+}
 const shortDate = (t) => new Date(t).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })
 
 function PredictionChart({ history, predictions, currentPrice }) {
@@ -103,44 +120,74 @@ function PredictionChart({ history, predictions, currentPrice }) {
   )
 }
 
-function PricePrediction({ product }) {
-  const [platformId, setPlatformId] = useState(1)
+function PricePrediction({ product, prices, bestPlatform }) {
+  const platforms = useMemo(() => platformOptions(prices), [prices])
+  const defaultPlatform = useMemo(() => {
+    const best = platforms.find((p) => p.name === bestPlatform && p.available)
+    return (best || platforms.find((p) => p.available) || platforms[0]).id
+  }, [platforms, bestPlatform])
+
+  const [platformId, setPlatformId] = useState(defaultPlatform)
   const [days, setDays] = useState('')
   const [history, setHistory] = useState([])
+  const [historyFailed, setHistoryFailed] = useState(false)
   const [data, setData] = useState(null)
-  const [status, setStatus] = useState('loading') // loading | ready | unavailable | error
+  const [knownPeriods, setKnownPeriods] = useState([])
+  const [status, setStatus] = useState('loading') // loading | ready | unavailable | empty | notfound | error
+  const [message, setMessage] = useState('')
   const [retry, setRetry] = useState(0)
 
+  // New product: reset selection. (Platform change resets days in its handler,
+  // so there is no second request caused by an effect.)
   useEffect(() => {
+    setPlatformId(defaultPlatform)
     setDays('')
-  }, [product.id, platformId])
+    setKnownPeriods([])
+  }, [product.id, defaultPlatform])
+
+  const changePlatform = (id) => {
+    setPlatformId(id)
+    setDays('')
+    setKnownPeriods([])
+  }
 
   useEffect(() => {
     let cancelled = false
     setStatus('loading')
     setData(null)
+    setMessage('')
 
-    // History failure must not block the prediction card: treat it as empty.
+    // History failure must not block the prediction card: chart just has no history line.
     const histP = getProductHistory(product.id, platformId).then(
-      (d) => (Array.isArray(d && d.history) ? d.history : []),
-      () => []
+      (d) => ({ rows: Array.isArray(d && d.history) ? d.history : [], failed: false }),
+      () => ({ rows: [], failed: true })
     )
-    const predP = getProductPrediction(product.id, platformId, days)
+    const predP = getProductPrediction(product.id, platformId, days === '' ? undefined : days).then(
+      (d) => ({ d }),
+      (e) => ({ e })
+    )
 
-    Promise.all([histP, predP.then((d) => ({ d }), (e) => ({ e }))]).then(([h, r]) => {
+    Promise.all([histP, predP]).then(([h, r]) => {
       if (cancelled) return
-      setHistory(h)
+      setHistory(h.rows)
+      setHistoryFailed(h.failed)
       if (r.e) {
-        const unavailable = r.e.status === 404 || r.e.code === 'MOCK_UNSUPPORTED' || r.e.code === 'NOT_FOUND'
-        setStatus(unavailable ? 'unavailable' : 'error')
+        setStatus(classifyPredictionError(r.e))
+        setMessage(r.e.message || '')
         return
       }
-      const preds = r.d && Array.isArray(r.d.predictions) ? r.d.predictions : []
+      const preds = r.d && Array.isArray(r.d.predictions)
+        ? r.d.predictions.filter((p) => p && isNum(p.predicted_price) && !Number.isNaN(new Date(p.date).getTime()))
+        : []
       if (!preds.length) {
-        setStatus('unavailable')
+        setStatus('empty')
         return
       }
-      setData(r.d)
+      const periods = Array.isArray(r.d.available_periods) && r.d.available_periods.length
+        ? r.d.available_periods
+        : preds.map((p) => p.days_ahead)
+      setKnownPeriods([...new Set(periods.map(Number).filter((n) => n > 0))].sort((a, b) => a - b))
+      setData({ ...r.d, predictions: preds })
       setStatus('ready')
     })
     return () => {
@@ -148,13 +195,7 @@ function PricePrediction({ product }) {
     }
   }, [product.id, platformId, days, retry])
 
-  const periods = useMemo(() => {
-    if (!data) return []
-    const list = Array.isArray(data.available_periods) && data.available_periods.length
-      ? data.available_periods
-      : data.predictions.map((p) => p.days_ahead)
-    return [...new Set(list.map(Number).filter((n) => n > 0))].sort((a, b) => a - b)
-  }, [data])
+  const periods = knownPeriods
 
   const activePeriod = days !== '' ? Number(days) : periods.length ? periods[0] : null
   const shown = data
@@ -173,18 +214,18 @@ function PricePrediction({ product }) {
         <h3 className="h5 mb-0">Price Prediction</h3>
         <div className="d-flex flex-wrap gap-2">
           <select
-            className="form-select form-select-sm w-auto"
+            className="form-select form-select-sm sc-select-auto"
             aria-label="Prediction platform"
             value={platformId}
-            onChange={(e) => setPlatformId(Number(e.target.value))}
+            onChange={(e) => changePlatform(Number(e.target.value))}
           >
-            {PLATFORMS.map((p) => (
-              <option key={p.id} value={p.id}>{p.name}</option>
+            {platforms.map((p) => (
+              <option key={p.id} value={p.id}>{p.name}{p.available ? '' : ' (unavailable now)'}</option>
             ))}
           </select>
           {periods.length > 1 && (
             <select
-              className="form-select form-select-sm w-auto"
+              className="form-select form-select-sm sc-select-auto"
               aria-label="Prediction period"
               value={activePeriod}
               onChange={(e) => setDays(e.target.value)}
@@ -201,14 +242,27 @@ function PricePrediction({ product }) {
         {status === 'loading' && <p className="text-muted mb-0" role="status">Loading price prediction...</p>}
 
         {status === 'unavailable' && (
-          <p className="text-muted mb-0">
-            Prediction not available yet for this product. It will appear here once the prediction service is ready.
+          <div role="status">
+            <p className="fw-semibold mb-1">Prediction not available yet</p>
+            <p className="text-muted small mb-0">
+              {message || 'No forecast has been generated for this product and platform yet.'} No predicted price is shown until the prediction service provides one.
+            </p>
+          </div>
+        )}
+
+        {status === 'empty' && (
+          <p className="text-muted mb-0" role="status">
+            The prediction service responded but returned no usable forecast prices for this selection.
           </p>
         )}
 
+        {status === 'notfound' && (
+          <p className="text-danger mb-0" role="alert">{message || 'Product not found.'}</p>
+        )}
+
         {status === 'error' && (
-          <p className="mb-0">
-            <span className="text-danger">Unable to load price prediction.</span>{' '}
+          <p className="mb-0" role="alert">
+            <span className="text-danger">{message || 'Unable to load price prediction.'}</span>{' '}
             <button type="button" className="btn btn-link btn-sm p-0 align-baseline" onClick={() => setRetry((n) => n + 1)}>
               Try again
             </button>
@@ -222,7 +276,7 @@ function PricePrediction({ product }) {
                 <div className="small text-muted">Product</div>
                 <div className="fw-semibold">{product.name}</div>
                 <div className="small text-muted">
-                  {(PLATFORMS.find((p) => p.id === platformId) || {}).name}
+                  {(platforms.find((p) => p.id === platformId) || {}).name}
                 </div>
               </div>
               <div className="col-6 col-md-3">
@@ -244,6 +298,9 @@ function PricePrediction({ product }) {
               </div>
             </div>
             <PredictionChart history={history} predictions={shown} currentPrice={current} />
+            {historyFailed && (
+              <p className="small text-muted mb-2">Price history could not be loaded, so the chart shows the forecast only.</p>
+            )}
             <p className="small text-muted mb-0">
               This is an estimate, not a guaranteed price. Actual prices may differ.
             </p>

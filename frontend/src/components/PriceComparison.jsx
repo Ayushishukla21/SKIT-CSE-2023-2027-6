@@ -60,11 +60,11 @@ export function formatDate(isoString) {
 }
 
 function formatPrice(value) {
-  return value == null ? '—' : `₹${value.toFixed(2)}`
+  return value == null || Number.isNaN(Number(value)) ? '—' : `₹${Number(value).toFixed(2)}`
 }
 
 function PriceComparison({ product, prices, summary, meta }) {
-  const hasPrices = Array.isArray(prices)
+  const hasPrices = Array.isArray(prices) && prices.length > 0
   const platformSlots = hasPrices ? buildPlatformSlots(prices) : []
   const availableCount = platformSlots.filter((entry) => entry.available).length
 
@@ -135,7 +135,7 @@ function PriceComparison({ product, prices, summary, meta }) {
       )}
 
       <PriceHistory productId={product.id} />
-      <PricePrediction product={product} />
+      <PricePrediction product={product} prices={hasPrices ? platformSlots : undefined} bestPlatform={safeSummary.best_platform} />
     </div>
   )
 }
