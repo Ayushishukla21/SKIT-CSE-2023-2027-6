@@ -14,7 +14,7 @@ The dataset contains:
 - product_id
 - product_name
 - brand
-- category
+^))O- category
 - platform_id
 - platform
 - price
@@ -41,7 +41,7 @@ The cleaning pipeline handles:
 
 ## 4. Missing Values
 
-Unavailable products should have a NULL/NaN price.
+Unavailable products should have a NULL/NaN price.^X
 
 Unavailable products are not treated as having a price of zero.
 
@@ -124,3 +124,23 @@ This is demo/historical data and is not live scraped marketplace data.
 
 More historical observations would be required for a production-level
 ML price prediction model.
+
+## 13. Price Trend Analysis
+
+The processed historical dataset was further analyzed to identify price
+changes, platform-level price movement, and price volatility.
+
+The analysis generates:
+
+- price_platform_summary.csv
+- cheapest_platform_by_product.csv
+- price_changes.csv
+- price_volatility.csv
+- platform_price_change_summary.csv
+- product_price_change_summary.csv
+- top_price_volatility.csv
+
+These outputs support historical price comparison and provide useful
+features and observations for the future ML price prediction stage.
+
+The current dataset is demo/historical data and is not live scraped data.

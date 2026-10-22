@@ -1,0 +1,7 @@
+product_id,product_name,platform_id,platform,average_price,minimum_price,maximum_price,observations
+1,amul taaza milk,2,Zepto,66.0,65.0,67.0,2
+2,aashirvaad atta,2,Zepto,264.0,260.0,268.0,2
+3,tata salt,2,Zepto,28.5,28.0,29.0,2
+4,tata tea,2,Zepto,145.0,142.0,148.0,2
+5,maggi 2-minute noodles,4,Flipkart Minutes,14.0,14.0,14.0,1
+6,parle-g biscuits,4,Flipkart Minutes,20.0,20.0,20.0,1

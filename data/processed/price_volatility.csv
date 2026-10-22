@@ -1,0 +1,25 @@
+product_id,product_name,platform,average_price,price_std,minimum_price,maximum_price,price_range
+1,amul taaza milk,Blinkit,69.0,1.4142135623730951,68.0,70.0,2.0
+1,amul taaza milk,Flipkart Minutes,67.0,,67.0,67.0,0.0
+1,amul taaza milk,Instamart,70.0,,70.0,70.0,0.0
+1,amul taaza milk,Zepto,66.0,1.4142135623730951,65.0,67.0,2.0
+2,aashirvaad atta,Blinkit,267.5,3.5355339059327378,265.0,270.0,5.0
+2,aashirvaad atta,Flipkart Minutes,265.0,,265.0,265.0,0.0
+2,aashirvaad atta,Instamart,275.0,,275.0,275.0,0.0
+2,aashirvaad atta,Zepto,264.0,5.656854249492381,260.0,268.0,8.0
+3,tata salt,Blinkit,29.0,1.4142135623730951,28.0,30.0,2.0
+3,tata salt,Flipkart Minutes,29.0,,29.0,29.0,0.0
+3,tata salt,Instamart,31.0,,31.0,31.0,0.0
+3,tata salt,Zepto,28.5,0.7071067811865476,28.0,29.0,1.0
+4,tata tea,Blinkit,147.5,3.5355339059327378,145.0,150.0,5.0
+4,tata tea,Flipkart Minutes,150.0,,150.0,150.0,0.0
+4,tata tea,Instamart,145.0,,145.0,145.0,0.0
+4,tata tea,Zepto,145.0,4.242640687119285,142.0,148.0,6.0
+5,maggi 2-minute noodles,Blinkit,14.5,0.7071067811865476,14.0,15.0,1.0
+5,maggi 2-minute noodles,Flipkart Minutes,14.0,,14.0,14.0,0.0
+5,maggi 2-minute noodles,Instamart,15.0,,15.0,15.0,0.0
+5,maggi 2-minute noodles,Zepto,15.0,1.4142135623730951,14.0,16.0,2.0
+6,parle-g biscuits,Blinkit,21.0,1.4142135623730951,20.0,22.0,2.0
+6,parle-g biscuits,Flipkart Minutes,20.0,,20.0,20.0,0.0
+6,parle-g biscuits,Instamart,22.0,,22.0,22.0,0.0
+6,parle-g biscuits,Zepto,21.5,0.7071067811865476,21.0,22.0,1.0

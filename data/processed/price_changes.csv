@@ -1,0 +1,13 @@
+product_id,product_name,brand,category,platform_id,platform,price,currency,available,recorded_at,quantity,unit,previous_price,price_change,price_change_percent
+1,amul taaza milk,Amul,Dairy,1,Blinkit,70.0,INR,True,2026-09-05 10:00:00+00:00,1,L,68.0,2.0,2.941176470588235
+1,amul taaza milk,Amul,Dairy,2,Zepto,67.0,INR,True,2026-09-05 10:00:00+00:00,1,L,65.0,2.0,3.076923076923077
+2,aashirvaad atta,Aashirvaad,Staples,1,Blinkit,270.0,INR,True,2026-09-05 10:05:00+00:00,5,kg,265.0,5.0,1.8867924528301887
+2,aashirvaad atta,Aashirvaad,Staples,2,Zepto,268.0,INR,True,2026-09-05 10:05:00+00:00,5,kg,260.0,8.0,3.076923076923077
+3,tata salt,Tata,Staples,1,Blinkit,30.0,INR,True,2026-09-05 10:10:00+00:00,1,kg,28.0,2.0,7.142857142857142
+3,tata salt,Tata,Staples,2,Zepto,29.0,INR,True,2026-09-05 10:10:00+00:00,1,kg,28.0,1.0,3.571428571428571
+4,tata tea,Tata,Beverages,1,Blinkit,150.0,INR,True,2026-09-05 10:15:00+00:00,250,g,145.0,5.0,3.4482758620689653
+4,tata tea,Tata,Beverages,2,Zepto,148.0,INR,True,2026-09-05 10:15:00+00:00,250,g,142.0,6.0,4.225352112676056
+5,maggi 2-minute noodles,Nestle,Snacks,1,Blinkit,15.0,INR,True,2026-09-05 10:20:00+00:00,1,pack,14.0,1.0,7.142857142857142
+5,maggi 2-minute noodles,Nestle,Snacks,2,Zepto,16.0,INR,True,2026-09-05 10:20:00+00:00,1,pack,14.0,2.0,14.285714285714285
+6,parle-g biscuits,Parle,Snacks,1,Blinkit,22.0,INR,True,2026-09-05 10:25:00+00:00,1,pack,20.0,2.0,10.0
+6,parle-g biscuits,Parle,Snacks,2,Zepto,22.0,INR,True,2026-09-05 10:25:00+00:00,1,pack,21.0,1.0,4.761904761904762
