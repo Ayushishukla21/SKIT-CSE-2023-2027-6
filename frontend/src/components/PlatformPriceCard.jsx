@@ -10,9 +10,9 @@ function PlatformPriceCard({ entry, isBest }) {
         {isBest && entry.available && <span className="sc-best-tag">Best Price</span>}
       </div>
 
-      {entry.available ? (
+      {entry.available && entry.price != null ? (
         <p className="h5 mb-1" style={{ color: 'var(--sc-forest)' }}>
-          &#8377;{entry.price.toFixed(2)}
+          &#8377;{Number(entry.price).toFixed(2)}
         </p>
       ) : entry.noData ? (
         <p className="h6 text-muted mb-1">No data yet</p>
@@ -23,7 +23,7 @@ function PlatformPriceCard({ entry, isBest }) {
       {entry.offer && (
         <span className="sc-offer-tag d-inline-block mt-1">
           {entry.offer.title}
-          {entry.offer.discount_amount != null ? ` (₹${entry.offer.discount_amount.toFixed(2)} off)` : ''}
+          {entry.offer.discount_amount != null ? ` (₹${Number(entry.offer.discount_amount).toFixed(2)} off)` : ''}
           {entry.offer.description ? ` — ${entry.offer.description}` : ''}
         </span>
       )}

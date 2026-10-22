@@ -138,13 +138,13 @@ export async function getProductHistory(id, platformId) {
 
 /* ---------------------------------------------------------------- */
 /* GET /api/products/<id>/prediction[?platform_id=<id>&days=<n>]     */
-/* PROPOSED contract (not yet in API_CONTRACT.md / Flask backend).   */
-/* A 404 means "prediction not available yet" in the UI.             */
+/* Backend currently answers 404 PREDICTION_UNAVAILABLE (ML model not */
+/* integrated). The UI keys off that error code, not the HTTP status. */
 /* ---------------------------------------------------------------- */
 export async function getProductPrediction(id, platformId, days) {
   if (USE_MOCK) {
     // Never fabricate predictions in mock mode.
-    throw new ApiError('MOCK_UNSUPPORTED', 'Price prediction is not available in mock mode.', 404)
+    throw new ApiError('PREDICTION_UNAVAILABLE', 'Price prediction is not available in mock mode.', 404)
   }
   return request(`/products/${encodeURIComponent(id)}/prediction`, { platform_id: platformId, days })
 }

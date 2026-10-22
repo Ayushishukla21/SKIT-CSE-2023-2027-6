@@ -368,3 +368,35 @@ a:hover {
   border-radius: 50%;
   display: inline-block;
 }
+
+/* ===== Price Prediction ===== */
+.sc-prediction-card {
+  background: #fff;
+  border-radius: var(--sc-radius-md);
+  box-shadow: var(--sc-shadow);
+}
+
+.sc-legend-line {
+  width: 22px;
+  height: 0;
+  border-top: 3px solid;
+  display: inline-block;
+}
+
+.sc-legend-line.dashed {
+  border-top-style: dashed;
+}
+
+/* Platform/period selects: auto width on desktop, full width on phones */
+.sc-select-auto {
+  width: auto;
+}
+
+@media (max-width: 576px) {
+  .sc-select-auto {
+    width: 100%;
+  }
+  .sc-product-card .btn {
+    white-space: normal;
+  }
+}

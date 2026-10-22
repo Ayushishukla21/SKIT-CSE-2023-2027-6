@@ -21,7 +21,13 @@ function hasPrice(row) {
 
 function HistoryChart({ rows }) {
   const points = rows.filter(hasPrice)
-  if (points.length < 2) return null
+  if (points.length < 2) {
+    return (
+      <p className="text-muted small mb-3" role="status">
+        Not enough priced observations to draw a chart yet. Recorded entries are listed below.
+      </p>
+    )
+  }
 
   const W = 640
   const H = 220
@@ -144,7 +150,7 @@ function PriceHistory({ productId }) {
       <div className="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
         <h3 className="h5 mb-0">Price History</h3>
         <select
-          className="form-select form-select-sm w-auto"
+          className="form-select form-select-sm sc-select-auto"
           aria-label="Filter by platform"
           value={platformId}
           onChange={(e) => setPlatformId(e.target.value)}

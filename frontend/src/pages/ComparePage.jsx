@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useMemo, useRef } from 'react'
 import SearchBar from '../components/SearchBar'
 import ProductGrid from '../components/ProductGrid'
 import LoadingSpinner from '../components/LoadingSpinner'
@@ -12,17 +12,23 @@ function ComparePage() {
   const [error, setError] = useState(null)
   const [isSearching, setIsSearching] = useState(false)
   const [activeQuery, setActiveQuery] = useState('')
+  const [category, setCategory] = useState('')
+  const requestId = useRef(0) // ignore stale responses when requests overlap
 
   const loadProducts = useCallback(async () => {
+    const id = ++requestId.current
     setLoading(true)
     setError(null)
+    setCategory('')
     try {
       const data = await getProducts({ page: 1, per_page: 50 })
-      setProducts(data.products)
+      if (id !== requestId.current) return
+      setProducts(Array.isArray(data.products) ? data.products : [])
     } catch (err) {
+      if (id !== requestId.current) return
       setError(err)
     } finally {
-      setLoading(false)
+      if (id === requestId.current) setLoading(false)
     }
   }, [])
 
@@ -33,17 +39,25 @@ function ComparePage() {
   const handleSearch = async (query) => {
     setIsSearching(true)
     setActiveQuery(query)
+    const id = ++requestId.current
     setLoading(true)
     setError(null)
+    setCategory('')
     try {
       const data = await searchProducts(query, 50)
-      setProducts(data.products)
+      if (id !== requestId.current) return
+      setProducts(Array.isArray(data.products) ? data.products : [])
     } catch (err) {
+      if (id !== requestId.current) return
       setError(err)
     } finally {
-      setLoading(false)
+      if (id === requestId.current) setLoading(false)
     }
   }
+
+  // Category chips come from the categories actually present in the response.
+  const categories = useMemo(() => [...new Set(products.map((p) => p.category).filter(Boolean))].sort(), [products])
+  const visible = category ? products.filter((p) => p.category === category) : products
 
   const handleClearSearch = () => {
     setIsSearching(false)
@@ -84,7 +98,34 @@ function ComparePage() {
           />
         )}
 
-        {!loading && !error && products.length > 0 && <ProductGrid products={products} />}
+        {!loading && !error && products.length > 0 && (
+          <>
+            <div className="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+              <p className="text-muted small mb-0" role="status">
+                {isSearching
+                  ? `${visible.length} result${visible.length === 1 ? '' : 's'} for "${activeQuery}"`
+                  : `${visible.length} product${visible.length === 1 ? '' : 's'}`}
+                {category ? ` in ${category}` : ''}
+              </p>
+              {categories.length > 1 && (
+                <div className="d-flex flex-wrap gap-2" role="group" aria-label="Filter by category">
+                  {['', ...categories].map((c) => (
+                    <button
+                      key={c || 'all'}
+                      type="button"
+                      className={`btn btn-sm ${category === c ? 'btn-forest' : 'btn-outline-forest'}`}
+                      aria-pressed={category === c}
+                      onClick={() => setCategory(c)}
+                    >
+                      {c || 'All'}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <ProductGrid products={visible} />
+          </>
+        )}
       </section>
     </div>
   )

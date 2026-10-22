@@ -6,6 +6,8 @@ import EmptyState from '../components/EmptyState'
 import PriceComparison from '../components/PriceComparison'
 import { compareProduct } from '../services/api'
 
+const NOT_FOUND_CODES = ['PRODUCT_NOT_FOUND', 'INVALID_PRODUCT_ID']
+
 function ComparisonPage() {
   const { productId } = useParams()
   const [data, setData] = useState(null)
@@ -37,7 +39,7 @@ function ComparisonPage() {
 
       {loading && <LoadingSpinner label="Loading comparison..." />}
 
-      {!loading && error && error.code === 'PRODUCT_NOT_FOUND' && (
+      {!loading && error && NOT_FOUND_CODES.includes(error.code) && (
         <EmptyState
           icon="❓"
           title="Product not found"
@@ -47,7 +49,7 @@ function ComparisonPage() {
         />
       )}
 
-      {!loading && error && error.code !== 'PRODUCT_NOT_FOUND' && (
+      {!loading && error && !NOT_FOUND_CODES.includes(error.code) && (
         <ErrorMessage message={error.message} onRetry={load} />
       )}
 
