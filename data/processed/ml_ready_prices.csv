@@ -1,0 +1,37 @@
+product_id,product_name,brand,category,platform_id,platform,price,currency,available,recorded_at,quantity,unit,year,month,day,day_of_week
+1,amul taaza milk,Amul,Dairy,1,Blinkit,68.0,INR,True,2026-09-01 10:00:00+00:00,1,L,2026,9,1,1
+1,amul taaza milk,Amul,Dairy,1,Blinkit,70.0,INR,True,2026-09-05 10:00:00+00:00,1,L,2026,9,5,5
+1,amul taaza milk,Amul,Dairy,2,Zepto,65.0,INR,True,2026-09-01 10:00:00+00:00,1,L,2026,9,1,1
+1,amul taaza milk,Amul,Dairy,2,Zepto,67.0,INR,True,2026-09-05 10:00:00+00:00,1,L,2026,9,5,5
+1,amul taaza milk,Amul,Dairy,3,Instamart,70.0,INR,True,2026-09-01 10:00:00+00:00,1,L,2026,9,1,1
+1,amul taaza milk,Amul,Dairy,4,Flipkart Minutes,67.0,INR,True,2026-09-01 10:00:00+00:00,1,L,2026,9,1,1
+2,aashirvaad atta,Aashirvaad,Staples,1,Blinkit,265.0,INR,True,2026-09-01 10:05:00+00:00,5,kg,2026,9,1,1
+2,aashirvaad atta,Aashirvaad,Staples,1,Blinkit,270.0,INR,True,2026-09-05 10:05:00+00:00,5,kg,2026,9,5,5
+2,aashirvaad atta,Aashirvaad,Staples,2,Zepto,260.0,INR,True,2026-09-01 10:05:00+00:00,5,kg,2026,9,1,1
+2,aashirvaad atta,Aashirvaad,Staples,2,Zepto,268.0,INR,True,2026-09-05 10:05:00+00:00,5,kg,2026,9,5,5
+2,aashirvaad atta,Aashirvaad,Staples,3,Instamart,275.0,INR,True,2026-09-01 10:05:00+00:00,5,kg,2026,9,1,1
+2,aashirvaad atta,Aashirvaad,Staples,4,Flipkart Minutes,265.0,INR,True,2026-09-01 10:05:00+00:00,5,kg,2026,9,1,1
+3,tata salt,Tata,Staples,1,Blinkit,28.0,INR,True,2026-09-01 10:10:00+00:00,1,kg,2026,9,1,1
+3,tata salt,Tata,Staples,1,Blinkit,30.0,INR,True,2026-09-05 10:10:00+00:00,1,kg,2026,9,5,5
+3,tata salt,Tata,Staples,2,Zepto,28.0,INR,True,2026-09-01 10:10:00+00:00,1,kg,2026,9,1,1
+3,tata salt,Tata,Staples,2,Zepto,29.0,INR,True,2026-09-05 10:10:00+00:00,1,kg,2026,9,5,5
+3,tata salt,Tata,Staples,3,Instamart,31.0,INR,True,2026-09-01 10:10:00+00:00,1,kg,2026,9,1,1
+3,tata salt,Tata,Staples,4,Flipkart Minutes,29.0,INR,True,2026-09-01 10:10:00+00:00,1,kg,2026,9,1,1
+4,tata tea,Tata,Beverages,1,Blinkit,145.0,INR,True,2026-09-01 10:15:00+00:00,250,g,2026,9,1,1
+4,tata tea,Tata,Beverages,1,Blinkit,150.0,INR,True,2026-09-05 10:15:00+00:00,250,g,2026,9,5,5
+4,tata tea,Tata,Beverages,2,Zepto,142.0,INR,True,2026-09-01 10:15:00+00:00,250,g,2026,9,1,1
+4,tata tea,Tata,Beverages,2,Zepto,148.0,INR,True,2026-09-05 10:15:00+00:00,250,g,2026,9,5,5
+4,tata tea,Tata,Beverages,3,Instamart,145.0,INR,True,2026-09-01 10:15:00+00:00,250,g,2026,9,1,1
+4,tata tea,Tata,Beverages,4,Flipkart Minutes,150.0,INR,True,2026-09-01 10:15:00+00:00,250,g,2026,9,1,1
+5,maggi 2-minute noodles,Nestle,Snacks,1,Blinkit,14.0,INR,True,2026-09-01 10:20:00+00:00,1,pack,2026,9,1,1
+5,maggi 2-minute noodles,Nestle,Snacks,1,Blinkit,15.0,INR,True,2026-09-05 10:20:00+00:00,1,pack,2026,9,5,5
+5,maggi 2-minute noodles,Nestle,Snacks,2,Zepto,14.0,INR,True,2026-09-01 10:20:00+00:00,1,pack,2026,9,1,1
+5,maggi 2-minute noodles,Nestle,Snacks,2,Zepto,16.0,INR,True,2026-09-05 10:20:00+00:00,1,pack,2026,9,5,5
+5,maggi 2-minute noodles,Nestle,Snacks,3,Instamart,15.0,INR,True,2026-09-01 10:20:00+00:00,1,pack,2026,9,1,1
+5,maggi 2-minute noodles,Nestle,Snacks,4,Flipkart Minutes,14.0,INR,True,2026-09-01 10:20:00+00:00,1,pack,2026,9,1,1
+6,parle-g biscuits,Parle,Snacks,1,Blinkit,20.0,INR,True,2026-09-01 10:25:00+00:00,1,pack,2026,9,1,1
+6,parle-g biscuits,Parle,Snacks,1,Blinkit,22.0,INR,True,2026-09-05 10:25:00+00:00,1,pack,2026,9,5,5
+6,parle-g biscuits,Parle,Snacks,2,Zepto,21.0,INR,True,2026-09-01 10:25:00+00:00,1,pack,2026,9,1,1
+6,parle-g biscuits,Parle,Snacks,2,Zepto,22.0,INR,True,2026-09-05 10:25:00+00:00,1,pack,2026,9,5,5
+6,parle-g biscuits,Parle,Snacks,3,Instamart,22.0,INR,True,2026-09-01 10:25:00+00:00,1,pack,2026,9,1,1
+6,parle-g biscuits,Parle,Snacks,4,Flipkart Minutes,20.0,INR,True,2026-09-01 10:25:00+00:00,1,pack,2026,9,1,1
