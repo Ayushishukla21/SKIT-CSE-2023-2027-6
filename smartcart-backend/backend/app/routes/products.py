@@ -4,6 +4,7 @@ GET /api/products/<id>
 GET /api/products/search?q=<query>
 GET /api/products/<id>/compare
 GET /api/products/<id>/history[?platform_id=1-4]
+GET /api/products/<id>/prediction[?platform_id=1-4&days=<n>]  (404 PREDICTION_UNAVAILABLE until a model is registered)
 
 The /search route is declared before the /<raw_id> route in this file for
 readability. Flask/Werkzeug already prefers the static "search" segment
@@ -17,6 +18,7 @@ from flask import Blueprint, jsonify, request
 
 from app.services import comparison_service, history_service, prediction_service, product_service, search_service
 from app.utils.validators import (
+    validate_optional_days,
     validate_optional_platform_id,
     validate_pagination,
     validate_product_id,
@@ -54,20 +56,20 @@ def compare_product(raw_id):
     result = comparison_service.get_comparison(product_id)
     return jsonify(result), 200
 
+
+@products_bp.route("/products/<raw_id>/history", methods=["GET"])
+def product_history(raw_id):
+    product_id = validate_product_id(raw_id)
+    platform_id = validate_optional_platform_id(request.args.get("platform_id"))
+    result = history_service.get_history(product_id, platform_id)
+    return jsonify(result), 200
+
+
 @products_bp.route("/products/<raw_id>/prediction", methods=["GET"])
 def product_prediction(raw_id):
     product_id = validate_product_id(raw_id)
     platform_id = validate_optional_platform_id(request.args.get("platform_id"))
     result = prediction_service.get_prediction(
-        product_id, platform_id, request.args.get("days")
+        product_id, platform_id, validate_optional_days(request.args.get("days"))
     )
-    return jsonify(result), 200
-
-@products_bp.route("/products/<raw_id>/history", methods=["GET"])
-def product_history(raw_id):
-    product_id = validate_product_id(raw_id)
-    platform_id = validate_optional_platform_id(
-        request.args.get("platform_id")
-    )
-    result = history_service.get_history(product_id, platform_id)
     return jsonify(result), 200
