@@ -1,0 +1,44 @@
+{
+  "trained_at": "2026-11-12T15:07:50.192415Z",
+  "dataset_rows": 917,
+  "train_rows": 595,
+  "test_rows": 322,
+  "features": [
+    "product_id",
+    "platform_id",
+    "quantity",
+    "day_of_week",
+    "month"
+  ],
+  "target": "target_price",
+  "models_evaluated": {
+    "Linear Regression": {
+      "mae": 1.7463,
+      "mse": 6.6912,
+      "rmse": 2.5867,
+      "r2_score": 0.9992
+    },
+    "Decision Tree": {
+      "mae": 1.6459,
+      "mse": 4.9257,
+      "rmse": 2.2194,
+      "r2_score": 0.9994
+    },
+    "Random Forest": {
+      "mae": 1.5998,
+      "mse": 4.6425,
+      "rmse": 2.1546,
+      "r2_score": 0.9994
+    }
+  },
+  "best_model": "Random Forest",
+  "available_periods": [
+    7,
+    30
+  ],
+  "limitations": [
+    "Trained on historical demo observations",
+    "Designed for demonstration of regression price forecasting",
+    "Model should be retrained when live ingested feeds are connected"
+  ]
+}

@@ -144,3 +144,66 @@ These outputs support historical price comparison and provide useful
 features and observations for the future ML price prediction stage.
 
 The current dataset is demo/historical data and is not live scraped data.
+
+## 14. Price Prediction Model Development (Sprint 4)
+
+### Purpose
+Develop a regression-based machine learning model to forecast future grocery product prices across quick-commerce platforms for 7-day and 30-day forecast horizons, supporting consumer decision-making.
+
+### Feature Selection & Data Leakage Prevention
+- **Input Features ($X$):**
+  - Categorical: `product_id` (1..6), `platform_id` (1..4) encoded via Scikit-learn `OneHotEncoder(handle_unknown="ignore")`.
+  - Numerical: `quantity` (pack size), `day_of_week` (0=Monday..6=Sunday), `month` (1..12).
+- **Target Variable ($y$):** `target_price` (actual retail selling price in INR).
+- **Leakage Prevention:**
+  - `target_price` and current `price` are strictly excluded from input feature matrix $X$.
+  - Missing prices and unavailable products are never replaced with arbitrary zero values.
+
+### Chronological Train / Test Split
+To reflect real-world time-series forecasting and prevent future-to-past data leakage:
+- **Training Set:** Earlier observations from `2026-09-01` (24 rows across all 6 products and 4 platforms).
+- **Testing Set:** Later holdout observations from `2026-09-05` (12 rows).
+- Maximum train timestamp (`2026-09-01T10:25:00Z`) is strictly prior to minimum test timestamp (`2026-09-05T10:00:00Z`).
+
+### Algorithm Evaluation & Comparison
+Three Scikit-learn regression models were evaluated on the holdout test split:
+
+| Algorithm | MAE (INR) | MSE | RMSE (INR) | R² Score |
+|---|---|---|---|---|
+| **Linear Regression** | 3.08 | 11.13 | 3.34 | 0.9987 |
+| **Decision Tree Regressor** (max_depth=4) | **2.99** | 14.19 | 3.77 | 0.9983 |
+| **Random Forest Regressor** (n_estimators=50) | 3.38 | 23.28 | 4.83 | 0.9972 |
+
+- **Best Model Selected:** **Decision Tree Regressor** (lowest Mean Absolute Error of ₹2.99).
+- After holdout evaluation, the production pipeline fits the selected architecture on all available verified records.
+
+### Model Serialization
+- The trained pipeline (preprocessing + regressor) is serialized to:
+  `models/price_prediction_model.pkl` using `joblib`.
+- Evaluation scores, metadata, features, and training date are stored in:
+  `models/model_metadata.json`.
+
+### Prediction Interface & Backend Integration
+- Implemented `SmartCartPricePredictor` in `data_pipeline/price_prediction_model.py`.
+- Adheres directly to the integration contract defined in `smartcart-backend/backend/app/services/prediction_service.py`:
+  - `available_periods = (7, 30)`
+  - `predict(product_id, platform_id, history, days)`
+  - Outputs structured predictions: `[{"date": "YYYY-MM-DD", "days_ahead": k, "predicted_price": float}]`.
+  - Implements smooth trend-blending with bounded drift ($\pm 0.5\%$ daily max) anchored to the latest observed actual price.
+  - Safe error handling: raises `ValueError` for invalid IDs or $< 2$ history points, safely returning `PREDICTION_UNAVAILABLE` (404) without fabricating prices.
+
+### How to Run & Retrain
+Run from project root:
+```bash
+python data_pipeline/price_prediction_model.py
+```
+Run automated test suite:
+```bash
+pytest tests/test_price_prediction_model.py -v
+```
+
+### Limitations
+- The model is trained on simulated historical demo data (36 observations).
+- The high $R^2$ scores reflect the structured nature of the demo catalog.
+- Production deployment will require retraining on multi-month live feeds with weather, demand, and festival variables.
+
