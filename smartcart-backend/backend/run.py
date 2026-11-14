@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 from dotenv import load_dotenv
 
@@ -8,6 +8,11 @@ from app import create_app  # noqa: E402  (import after load_dotenv on purpose)
 
 app = create_app()
 
+from app.services.model_loader import load_prediction_model  # noqa: E402
+
+load_prediction_model()
+
 if __name__ == "__main__":
     debug = os.getenv("FLASK_DEBUG", "true").lower() == "true"
     app.run(host="0.0.0.0", port=5000, debug=debug)
+
