@@ -302,7 +302,7 @@ function PricePrediction({ product, prices, bestPlatform }) {
               <p className="small text-muted mb-2">Price history could not be loaded, so the chart shows the forecast only.</p>
             )}
             <p className="small text-muted mb-0">
-              This is an estimate, not a guaranteed price. Actual prices may differ.
+              This is an estimate, not a guaranteed price. Actual prices may differ. Model trained on demo data only.
             </p>
           </>
         )}
