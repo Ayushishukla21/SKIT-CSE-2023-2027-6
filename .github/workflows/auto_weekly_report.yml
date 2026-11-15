@@ -2,15 +2,10 @@ name: Weekly Progress Report Auto-Commit
 
 on:
   schedule:
-    # Every Thursday at 11:59 PM IST
+    # Runs every Thursday at 11:59 PM IST (which corresponds to 18:29 UTC)
+    # Cron format: min hour day-of-month month day-of-week (4 = Thursday)
     - cron: '29 18 * * 4'
-
-  workflow_dispatch:
-    inputs:
-      report_date:
-        description: 'Monthly report end date (YYYY-MM-DD)'
-        required: true
-        type: string
+  workflow_dispatch: # Allows manual trigger anytime from the Actions tab
 
 permissions:
   contents: write
@@ -31,40 +26,27 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install PDF and Graph Dependencies
+      - name: Install PDF & Graph Dependencies
         run: |
           pip install reportlab matplotlib
 
-      - name: Generate Progress Report
-        env:
-          REPORT_DATE: ${{ inputs.report_date }}
+      - name: Generate Weekly PDF Report
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            echo "Generating scheduled weekly report"
-            python generate_report.py weekly
-          else
-            echo "Generating monthly report ending on $REPORT_DATE"
-            python generate_report.py monthly "$REPORT_DATE"
-          fi
+          python generate_report.py weekly
 
-      - name: Move PDF to Weekly Reports Directory and Commit
+      - name: Move PDF to Weekly Reports Directory & Commit to Repository
         run: |
           mkdir -p weekly_reports
+          mv *_Weekly_Progress_Report_Form-3_*.pdf weekly_reports/
 
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            mv *_Weekly_Progress_Report_Form-3_*.pdf weekly_reports/
-          else
-            mv *_Monthly_Progress_Report_Form-3_*.pdf weekly_reports/
-          fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           git add weekly_reports/
-
+          
           if git diff --staged --quiet; then
             echo "No new changes or reports to commit."
           else
-            git commit -m "docs: archive Form-3 progress report [skip ci]"
-            git push origin HEAD:main
+            git commit -m "docs: archive Form-3 weekly progress report [skip ci]"
+            git push
           fi
