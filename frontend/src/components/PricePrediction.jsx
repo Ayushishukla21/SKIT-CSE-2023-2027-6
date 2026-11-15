@@ -297,6 +297,7 @@ function PricePrediction({ product, prices, bestPlatform }) {
                 </div>
               </div>
             </div>
+            {change != null && (<p className="fw-semibold mb-2" role="status">{change > 0 ? 'Suggestion: price may rise, consider buying now.' : change < 0 ? 'Suggestion: price may fall, consider waiting.' : 'Suggestion: price looks stable.'}</p>)}
             <PredictionChart history={history} predictions={shown} currentPrice={current} />
             {historyFailed && (
               <p className="small text-muted mb-2">Price history could not be loaded, so the chart shows the forecast only.</p>
