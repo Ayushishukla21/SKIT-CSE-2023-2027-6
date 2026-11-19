@@ -1,7 +1,26 @@
-product_id,product_name,normalized_product_name
-1,Amul Taaza Milk,amul taaza milk
-2,Aashirvaad Atta,aashirvaad atta
-3,Tata Salt,tata salt
-4,Tata Tea,tata tea
-5,Maggi 2-Minute Noodles,maggi 2-minute noodles
-6,Parle-G Biscuits,parle-g biscuits
+raw_title,platform,canonical_product_id,canonical_name,brand,category,quantity,unit,match_confidence,match_status
+Amul Taaza Milk 1L,Blinkit,1,Amul Taaza Milk,Amul,Dairy,1.0,L,1.0,MATCHED
+Amul Taaza Milk - 1 Litre,Zepto,1,Amul Taaza Milk,Amul,Dairy,1.0,L,1.0,MATCHED
+Amul Taaza Milk 1 L,Instamart,1,Amul Taaza Milk,Amul,Dairy,1.0,L,1.0,MATCHED
+Amul Taaza Fresh Toned Milk (1 L),Flipkart Minutes,1,Amul Taaza Milk,Amul,Dairy,1.0,L,1.0,MATCHED
+Amul Taaza Toned Milk Pouch (1 Litre),Blinkit,1,Amul Taaza Milk,Amul,Dairy,1.0,L,1.0,MATCHED
+Aashirvaad Atta 5kg,Blinkit,2,Aashirvaad Atta,Aashirvaad,Staples,5.0,kg,1.0,MATCHED
+Aashirvaad Superior MP Atta 5 kg,Zepto,2,Aashirvaad Atta,Aashirvaad,Staples,5.0,kg,1.0,MATCHED
+Aashirvaad Whole Wheat Atta 5kg,Instamart,2,Aashirvaad Atta,Aashirvaad,Staples,5.0,kg,1.0,MATCHED
+Aashirvaad Shudh Chakki Atta (5 kg),Flipkart Minutes,2,Aashirvaad Atta,Aashirvaad,Staples,5.0,kg,1.0,MATCHED
+Tata Salt 1kg,Blinkit,3,Tata Salt,Tata,Staples,1.0,kg,1.0,MATCHED
+Tata Iodized Salt 1 kg,Zepto,3,Tata Salt,Tata,Staples,1.0,kg,1.0,MATCHED
+Tata Salt - 1kg Pouch,Instamart,3,Tata Salt,Tata,Staples,1.0,kg,1.0,MATCHED
+Tata Vacuum Evaporated Iodized Salt (1 kg),Flipkart Minutes,3,Tata Salt,Tata,Staples,1.0,kg,1.0,MATCHED
+Tata Tea 250g,Blinkit,4,Tata Tea,Tata,Beverages,250.0,g,1.0,MATCHED
+Tata Tea Premium 250 g,Zepto,4,Tata Tea,Tata,Beverages,250.0,g,1.0,MATCHED
+Tata Premium Tea (250g),Instamart,4,Tata Tea,Tata,Beverages,250.0,g,1.0,MATCHED
+Tata Tea Gold Leaf Tea 250 g,Flipkart Minutes,4,Tata Tea,Tata,Beverages,250.0,g,1.0,MATCHED
+Maggi 2-Minute Noodles 70g,Blinkit,5,Maggi 2-Minute Noodles,Maggi,Packaged Food,70.0,g,1.0,MATCHED
+Maggi 2-Minute Masala Noodles 70 g,Zepto,5,Maggi 2-Minute Noodles,Maggi,Packaged Food,70.0,g,1.0,MATCHED
+Maggi Masala 2 Minute Instant Noodles 70g,Instamart,5,Maggi 2-Minute Noodles,Maggi,Packaged Food,70.0,g,1.0,MATCHED
+Maggi 2-Minute Instant Noodles - 70 g,Flipkart Minutes,5,Maggi 2-Minute Noodles,Maggi,Packaged Food,70.0,g,0.58,MATCHED
+Parle-G Biscuits 250g,Blinkit,6,Parle-G Biscuits,Parle,Snacks,250.0,g,1.0,MATCHED
+Parle-G Original Gluco Biscuits 250 g,Zepto,6,Parle-G Biscuits,Parle,Snacks,250.0,g,1.0,MATCHED
+Parle-G Gluco Biscuits - 250g,Instamart,6,Parle-G Biscuits,Parle,Snacks,250.0,g,1.0,MATCHED
+Parle G Glucose Biscuits (250 g),Flipkart Minutes,6,Parle-G Biscuits,Parle,Snacks,250.0,g,1.0,MATCHED

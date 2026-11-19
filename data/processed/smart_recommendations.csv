@@ -1,0 +1,7 @@
+product_id,product_name,category,decision,recommended_platform,best_price,highest_price,potential_savings_inr,potential_savings_pct,timing_advice,summary
+1,Amul Taaza Milk,Dairy,BUY_NOW,Zepto,65.0,70.0,5.0,7.14,BUY_AS_NEEDED (Price is stable around historical normal),Recommended: Purchase Amul Taaza Milk on Zepto for INR 65.00. You save INR 5.00 (7.1%) compared to Instamart.
+2,Aashirvaad Atta,Staples,BUY_AS_NEEDED,Zepto,259.0,272.0,13.0,4.78,BUY_AS_NEEDED (Price is stable around historical normal),Recommended: Purchase Aashirvaad Atta on Zepto for INR 259.00. You save INR 13.00 (4.8%) compared to Instamart.
+3,Tata Salt,Staples,BUY_NOW,Zepto,27.0,29.0,2.0,6.9,BUY_AS_NEEDED (Price is stable around historical normal),Recommended: Purchase Tata Salt on Zepto for INR 27.00. You save INR 2.00 (6.9%) compared to Instamart.
+4,Tata Tea,Beverages,BUY_AS_NEEDED,Zepto,142.0,148.0,6.0,4.05,BUY_AS_NEEDED (Price is stable around historical normal),Recommended: Purchase Tata Tea on Zepto for INR 142.00. You save INR 6.00 (4.0%) compared to Instamart.
+5,Maggi 2-Minute Noodles,Packaged Food,BUY_NOW,Blinkit,14.0,15.0,1.0,6.67,BUY_AS_NEEDED (Price is stable around historical normal),Recommended: Purchase Maggi 2-Minute Noodles on Blinkit for INR 14.00. You save INR 1.00 (6.7%) compared to Instamart.
+6,Parle-G Biscuits,Snacks,BUY_NOW,Zepto,24.0,26.0,2.0,7.69,BUY_AS_NEEDED (Price is stable around historical normal),Recommended: Purchase Parle-G Biscuits on Zepto for INR 24.00. You save INR 2.00 (7.7%) compared to Flipkart Minutes.

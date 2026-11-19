@@ -1,37 +1,961 @@
-product_id,product_name,brand,category,platform_id,platform,price,currency,available,recorded_at,quantity,unit
-1,amul taaza milk,Amul,Dairy,1,Blinkit,68.0,INR,True,2026-09-01T10:00:00Z,1,L
-1,amul taaza milk,Amul,Dairy,1,Blinkit,70.0,INR,True,2026-09-05T10:00:00Z,1,L
-1,amul taaza milk,Amul,Dairy,2,Zepto,65.0,INR,True,2026-09-01T10:00:00Z,1,L
-1,amul taaza milk,Amul,Dairy,2,Zepto,67.0,INR,True,2026-09-05T10:00:00Z,1,L
-1,amul taaza milk,Amul,Dairy,3,Instamart,70.0,INR,True,2026-09-01T10:00:00Z,1,L
-1,amul taaza milk,Amul,Dairy,4,Flipkart Minutes,67.0,INR,True,2026-09-01T10:00:00Z,1,L
-2,aashirvaad atta,Aashirvaad,Staples,1,Blinkit,265.0,INR,True,2026-09-01T10:05:00Z,5,kg
-2,aashirvaad atta,Aashirvaad,Staples,1,Blinkit,270.0,INR,True,2026-09-05T10:05:00Z,5,kg
-2,aashirvaad atta,Aashirvaad,Staples,2,Zepto,260.0,INR,True,2026-09-01T10:05:00Z,5,kg
-2,aashirvaad atta,Aashirvaad,Staples,2,Zepto,268.0,INR,True,2026-09-05T10:05:00Z,5,kg
-2,aashirvaad atta,Aashirvaad,Staples,3,Instamart,275.0,INR,True,2026-09-01T10:05:00Z,5,kg
-2,aashirvaad atta,Aashirvaad,Staples,4,Flipkart Minutes,265.0,INR,True,2026-09-01T10:05:00Z,5,kg
-3,tata salt,Tata,Staples,1,Blinkit,28.0,INR,True,2026-09-01T10:10:00Z,1,kg
-3,tata salt,Tata,Staples,1,Blinkit,30.0,INR,True,2026-09-05T10:10:00Z,1,kg
-3,tata salt,Tata,Staples,2,Zepto,28.0,INR,True,2026-09-01T10:10:00Z,1,kg
-3,tata salt,Tata,Staples,2,Zepto,29.0,INR,True,2026-09-05T10:10:00Z,1,kg
-3,tata salt,Tata,Staples,3,Instamart,31.0,INR,True,2026-09-01T10:10:00Z,1,kg
-3,tata salt,Tata,Staples,4,Flipkart Minutes,29.0,INR,True,2026-09-01T10:10:00Z,1,kg
-4,tata tea,Tata,Beverages,1,Blinkit,145.0,INR,True,2026-09-01T10:15:00Z,250,g
-4,tata tea,Tata,Beverages,1,Blinkit,150.0,INR,True,2026-09-05T10:15:00Z,250,g
-4,tata tea,Tata,Beverages,2,Zepto,142.0,INR,True,2026-09-01T10:15:00Z,250,g
-4,tata tea,Tata,Beverages,2,Zepto,148.0,INR,True,2026-09-05T10:15:00Z,250,g
-4,tata tea,Tata,Beverages,3,Instamart,145.0,INR,True,2026-09-01T10:15:00Z,250,g
-4,tata tea,Tata,Beverages,4,Flipkart Minutes,150.0,INR,True,2026-09-01T10:15:00Z,250,g
-5,maggi 2-minute noodles,Nestle,Snacks,1,Blinkit,14.0,INR,True,2026-09-01T10:20:00Z,1,pack
-5,maggi 2-minute noodles,Nestle,Snacks,1,Blinkit,15.0,INR,True,2026-09-05T10:20:00Z,1,pack
-5,maggi 2-minute noodles,Nestle,Snacks,2,Zepto,14.0,INR,True,2026-09-01T10:20:00Z,1,pack
-5,maggi 2-minute noodles,Nestle,Snacks,2,Zepto,16.0,INR,True,2026-09-05T10:20:00Z,1,pack
-5,maggi 2-minute noodles,Nestle,Snacks,3,Instamart,15.0,INR,True,2026-09-01T10:20:00Z,1,pack
-5,maggi 2-minute noodles,Nestle,Snacks,4,Flipkart Minutes,14.0,INR,True,2026-09-01T10:20:00Z,1,pack
-6,parle-g biscuits,Parle,Snacks,1,Blinkit,20.0,INR,True,2026-09-01T10:25:00Z,1,pack
-6,parle-g biscuits,Parle,Snacks,1,Blinkit,22.0,INR,True,2026-09-05T10:25:00Z,1,pack
-6,parle-g biscuits,Parle,Snacks,2,Zepto,21.0,INR,True,2026-09-01T10:25:00Z,1,pack
-6,parle-g biscuits,Parle,Snacks,2,Zepto,22.0,INR,True,2026-09-05T10:25:00Z,1,pack
-6,parle-g biscuits,Parle,Snacks,3,Instamart,22.0,INR,True,2026-09-01T10:25:00Z,1,pack
-6,parle-g biscuits,Parle,Snacks,4,Flipkart Minutes,20.0,INR,True,2026-09-01T10:25:00Z,1,pack
+product_id,product_name,brand,category,platform_id,platform,price,currency,available,recorded_at,quantity,unit,discount_amount,effective_price
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.47,INR,True,2026-09-01T10:00:00Z,1.0,L,0.0,68.47
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.84,INR,True,2026-09-02T10:00:00Z,1.0,L,0.0,67.84
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,69.19,INR,True,2026-09-03T10:00:00Z,1.0,L,0.0,69.19
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,69.28,INR,True,2026-09-04T10:00:00Z,1.0,L,0.0,69.28
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.86,INR,True,2026-09-05T10:00:00Z,1.0,L,0.0,68.86
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,66.91,INR,True,2026-09-06T10:00:00Z,1.0,L,5.0,61.91
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.85,INR,True,2026-09-07T10:00:00Z,1.0,L,0.0,67.85
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.04,INR,True,2026-09-08T10:00:00Z,1.0,L,0.0,67.04
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.3,INR,True,2026-09-09T10:00:00Z,1.0,L,0.0,68.3
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.55,INR,True,2026-09-10T10:00:00Z,1.0,L,0.0,68.55
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.98,INR,True,2026-09-11T10:00:00Z,1.0,L,0.0,68.98
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.11,INR,True,2026-09-12T10:00:00Z,1.0,L,2.0,65.11
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,69.0,INR,True,2026-09-13T10:00:00Z,1.0,L,2.0,67.0
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,69.03,INR,True,2026-09-14T10:00:00Z,1.0,L,0.0,69.03
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,69.4,INR,True,2026-09-15T10:00:00Z,1.0,L,0.0,69.4
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.57,INR,True,2026-09-16T10:00:00Z,1.0,L,0.0,67.57
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.88,INR,True,2026-09-17T10:00:00Z,1.0,L,0.0,67.88
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.46,INR,True,2026-09-18T10:00:00Z,1.0,L,0.0,67.46
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.12,INR,True,2026-09-19T10:00:00Z,1.0,L,0.0,68.12
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,69.67,INR,True,2026-09-20T10:00:00Z,1.0,L,5.0,64.67
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.95,INR,True,2026-09-21T10:00:00Z,1.0,L,0.0,68.95
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,66.33,INR,True,2026-09-22T10:00:00Z,1.0,L,0.0,66.33
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.23,INR,True,2026-09-23T10:00:00Z,1.0,L,0.0,67.23
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.2,INR,True,2026-09-24T10:00:00Z,1.0,L,0.0,67.2
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.39,INR,True,2026-09-25T10:00:00Z,1.0,L,0.0,67.39
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.16,INR,True,2026-09-26T10:00:00Z,1.0,L,5.0,62.16
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.92,INR,True,2026-09-27T10:00:00Z,1.0,L,0.0,68.92
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.43,INR,True,2026-09-28T10:00:00Z,1.0,L,0.0,67.43
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.87,INR,True,2026-09-29T10:00:00Z,1.0,L,0.0,68.87
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,66.76,INR,True,2026-09-30T10:00:00Z,1.0,L,0.0,66.76
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.62,INR,True,2026-10-01T10:00:00Z,1.0,L,0.0,67.62
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.27,INR,True,2026-10-02T10:00:00Z,1.0,L,0.0,68.27
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.45,INR,True,2026-10-03T10:00:00Z,1.0,L,0.0,68.45
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.96,INR,True,2026-10-04T10:00:00Z,1.0,L,0.0,68.96
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.16,INR,True,2026-10-05T10:00:00Z,1.0,L,0.0,67.16
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,66.64,INR,True,2026-10-06T10:00:00Z,1.0,L,0.0,66.64
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.52,INR,True,2026-10-07T10:00:00Z,1.0,L,0.0,68.52
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.53,INR,True,2026-10-08T10:00:00Z,1.0,L,0.0,68.53
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,67.35,INR,True,2026-10-09T10:00:00Z,1.0,L,0.0,67.35
+1,Amul Taaza Milk,Amul,Dairy,1,Blinkit,68.22,INR,True,2026-10-10T10:00:00Z,1.0,L,0.0,68.22
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.83,INR,True,2026-09-01T10:00:00Z,1.0,L,0.0,63.83
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.02,INR,True,2026-09-02T10:00:00Z,1.0,L,0.0,65.02
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.69,INR,True,2026-09-03T10:00:00Z,1.0,L,0.0,64.69
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.73,INR,True,2026-09-04T10:00:00Z,1.0,L,0.0,63.73
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.96,INR,True,2026-09-05T10:00:00Z,1.0,L,3.0,61.96
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.64,INR,True,2026-09-06T10:00:00Z,1.0,L,3.0,62.64
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,66.18,INR,True,2026-09-07T10:00:00Z,1.0,L,0.0,66.18
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.42,INR,True,2026-09-08T10:00:00Z,1.0,L,0.0,65.42
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.79,INR,True,2026-09-09T10:00:00Z,1.0,L,0.0,65.79
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.08,INR,True,2026-09-10T10:00:00Z,1.0,L,0.0,64.08
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.3,INR,True,2026-09-11T10:00:00Z,1.0,L,0.0,64.3
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.74,INR,True,2026-09-12T10:00:00Z,1.0,L,0.0,63.74
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.55,INR,True,2026-09-13T10:00:00Z,1.0,L,3.0,61.55
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,66.4,INR,True,2026-09-14T10:00:00Z,1.0,L,0.0,66.4
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.94,INR,True,2026-09-15T10:00:00Z,1.0,L,0.0,65.94
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.59,INR,True,2026-09-16T10:00:00Z,1.0,L,0.0,65.59
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.39,INR,True,2026-09-17T10:00:00Z,1.0,L,0.0,64.39
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.44,INR,True,2026-09-18T10:00:00Z,1.0,L,0.0,65.44
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.73,INR,True,2026-09-19T10:00:00Z,1.0,L,5.0,58.73
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.51,INR,True,2026-09-20T10:00:00Z,1.0,L,0.0,64.51
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.81,INR,True,2026-09-21T10:00:00Z,1.0,L,0.0,65.81
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.88,INR,True,2026-09-22T10:00:00Z,1.0,L,0.0,64.88
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.48,INR,True,2026-09-23T10:00:00Z,1.0,L,0.0,65.48
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.93,INR,True,2026-09-24T10:00:00Z,1.0,L,0.0,65.93
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.17,INR,True,2026-09-25T10:00:00Z,1.0,L,0.0,65.17
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.04,INR,True,2026-09-26T10:00:00Z,1.0,L,0.0,65.04
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.53,INR,True,2026-09-27T10:00:00Z,1.0,L,3.0,60.53
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.75,INR,True,2026-09-28T10:00:00Z,1.0,L,0.0,63.75
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.95,INR,True,2026-09-29T10:00:00Z,1.0,L,0.0,63.95
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.34,INR,True,2026-09-30T10:00:00Z,1.0,L,0.0,64.34
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.71,INR,True,2026-10-01T10:00:00Z,1.0,L,0.0,63.71
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.61,INR,True,2026-10-02T10:00:00Z,1.0,L,0.0,65.61
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.05,INR,True,2026-10-03T10:00:00Z,1.0,L,3.0,62.05
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.97,INR,True,2026-10-04T10:00:00Z,1.0,L,5.0,58.97
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,66.54,INR,True,2026-10-05T10:00:00Z,1.0,L,0.0,66.54
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.09,INR,True,2026-10-06T10:00:00Z,1.0,L,0.0,65.09
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,64.16,INR,True,2026-10-07T10:00:00Z,1.0,L,0.0,64.16
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,63.97,INR,True,2026-10-08T10:00:00Z,1.0,L,0.0,63.97
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,66.5,INR,True,2026-10-09T10:00:00Z,1.0,L,0.0,66.5
+1,Amul Taaza Milk,Amul,Dairy,2,Zepto,65.97,INR,True,2026-10-10T10:00:00Z,1.0,L,0.0,65.97
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.36,INR,True,2026-09-01T10:00:00Z,1.0,L,0.0,68.36
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.78,INR,True,2026-09-02T10:00:00Z,1.0,L,0.0,68.78
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.42,INR,True,2026-09-03T10:00:00Z,1.0,L,0.0,70.42
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.6,INR,True,2026-09-04T10:00:00Z,1.0,L,0.0,69.6
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.78,INR,True,2026-09-05T10:00:00Z,1.0,L,0.0,70.78
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.89,INR,True,2026-09-06T10:00:00Z,1.0,L,2.0,67.89
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,71.12,INR,True,2026-09-07T10:00:00Z,1.0,L,0.0,71.12
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.28,INR,True,2026-09-08T10:00:00Z,1.0,L,0.0,70.28
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.05,INR,True,2026-09-09T10:00:00Z,1.0,L,0.0,70.05
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.09,INR,True,2026-09-10T10:00:00Z,1.0,L,0.0,70.09
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.54,INR,True,2026-09-11T10:00:00Z,1.0,L,0.0,68.54
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.76,INR,True,2026-09-12T10:00:00Z,1.0,L,2.0,68.76
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.33,INR,True,2026-09-13T10:00:00Z,1.0,L,0.0,69.33
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.33,INR,True,2026-09-14T10:00:00Z,1.0,L,0.0,70.33
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.29,INR,True,2026-09-15T10:00:00Z,1.0,L,0.0,69.29
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,71.72,INR,True,2026-09-16T10:00:00Z,1.0,L,0.0,71.72
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.31,INR,True,2026-09-17T10:00:00Z,1.0,L,0.0,68.31
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.76,INR,True,2026-09-18T10:00:00Z,1.0,L,0.0,69.76
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,71.63,INR,True,2026-09-19T10:00:00Z,1.0,L,3.0,68.63
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,71.09,INR,True,2026-09-20T10:00:00Z,1.0,L,3.0,68.09
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.6,INR,True,2026-09-21T10:00:00Z,1.0,L,0.0,69.6
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.78,INR,True,2026-09-22T10:00:00Z,1.0,L,0.0,68.78
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.56,INR,True,2026-09-23T10:00:00Z,1.0,L,0.0,68.56
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,71.64,INR,True,2026-09-24T10:00:00Z,1.0,L,0.0,71.64
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.64,INR,True,2026-09-25T10:00:00Z,1.0,L,0.0,68.64
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.29,INR,True,2026-09-26T10:00:00Z,1.0,L,2.0,67.29
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.71,INR,True,2026-09-27T10:00:00Z,1.0,L,5.0,65.71
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.17,INR,True,2026-09-28T10:00:00Z,1.0,L,0.0,70.17
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.57,INR,True,2026-09-29T10:00:00Z,1.0,L,0.0,69.57
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.68,INR,True,2026-09-30T10:00:00Z,1.0,L,0.0,68.68
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.28,INR,True,2026-10-01T10:00:00Z,1.0,L,0.0,70.28
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.74,INR,True,2026-10-02T10:00:00Z,1.0,L,0.0,69.74
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.52,INR,True,2026-10-03T10:00:00Z,1.0,L,0.0,68.52
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.99,INR,True,2026-10-04T10:00:00Z,1.0,L,2.0,66.99
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.84,INR,True,2026-10-05T10:00:00Z,1.0,L,0.0,68.84
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,70.86,INR,True,2026-10-06T10:00:00Z,1.0,L,0.0,70.86
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,68.64,INR,True,2026-10-07T10:00:00Z,1.0,L,0.0,68.64
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,71.61,INR,True,2026-10-08T10:00:00Z,1.0,L,0.0,71.61
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.99,INR,True,2026-10-09T10:00:00Z,1.0,L,0.0,69.99
+1,Amul Taaza Milk,Amul,Dairy,3,Instamart,69.44,INR,True,2026-10-10T10:00:00Z,1.0,L,5.0,64.44
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.21,INR,True,2026-09-01T10:00:00Z,1.0,L,0.0,67.21
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.96,INR,True,2026-09-02T10:00:00Z,1.0,L,0.0,66.96
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.46,INR,True,2026-09-03T10:00:00Z,1.0,L,0.0,68.46
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.55,INR,True,2026-09-04T10:00:00Z,1.0,L,0.0,66.55
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.31,INR,True,2026-09-05T10:00:00Z,1.0,L,0.0,67.31
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.67,INR,True,2026-09-06T10:00:00Z,1.0,L,5.0,61.67
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.22,INR,True,2026-09-07T10:00:00Z,1.0,L,0.0,68.22
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.91,INR,True,2026-09-08T10:00:00Z,1.0,L,0.0,65.91
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.76,INR,True,2026-09-09T10:00:00Z,1.0,L,0.0,67.76
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.35,INR,True,2026-09-10T10:00:00Z,1.0,L,0.0,65.35
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.76,INR,True,2026-09-11T10:00:00Z,1.0,L,0.0,65.76
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.08,INR,True,2026-09-12T10:00:00Z,1.0,L,5.0,62.08
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.74,INR,True,2026-09-13T10:00:00Z,1.0,L,2.0,63.74
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.92,INR,True,2026-09-14T10:00:00Z,1.0,L,0.0,66.92
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.64,INR,True,2026-09-15T10:00:00Z,1.0,L,0.0,68.64
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.12,INR,True,2026-09-16T10:00:00Z,1.0,L,0.0,68.12
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.98,INR,True,2026-09-17T10:00:00Z,1.0,L,0.0,65.98
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.0,INR,True,2026-09-18T10:00:00Z,1.0,L,0.0,68.0
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.04,INR,True,2026-09-19T10:00:00Z,1.0,L,5.0,62.04
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.95,INR,True,2026-09-20T10:00:00Z,1.0,L,0.0,67.95
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.63,INR,True,2026-09-21T10:00:00Z,1.0,L,0.0,68.63
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.51,INR,True,2026-09-22T10:00:00Z,1.0,L,0.0,68.51
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.44,INR,True,2026-09-23T10:00:00Z,1.0,L,0.0,67.44
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.66,INR,True,2026-09-24T10:00:00Z,1.0,L,0.0,65.66
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.42,INR,True,2026-09-25T10:00:00Z,1.0,L,0.0,68.42
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.21,INR,True,2026-09-26T10:00:00Z,1.0,L,5.0,63.21
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.41,INR,True,2026-09-27T10:00:00Z,1.0,L,0.0,67.41
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.97,INR,True,2026-09-28T10:00:00Z,1.0,L,0.0,66.97
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.86,INR,True,2026-09-29T10:00:00Z,1.0,L,0.0,65.86
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.35,INR,True,2026-09-30T10:00:00Z,1.0,L,0.0,66.35
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.06,INR,True,2026-10-01T10:00:00Z,1.0,L,0.0,67.06
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,67.37,INR,True,2026-10-02T10:00:00Z,1.0,L,0.0,67.37
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.94,INR,True,2026-10-03T10:00:00Z,1.0,L,0.0,65.94
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.41,INR,True,2026-10-04T10:00:00Z,1.0,L,2.0,63.41
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.35,INR,True,2026-10-05T10:00:00Z,1.0,L,0.0,65.35
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.28,INR,True,2026-10-06T10:00:00Z,1.0,L,0.0,68.28
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.4,INR,True,2026-10-07T10:00:00Z,1.0,L,0.0,66.4
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,65.68,INR,True,2026-10-08T10:00:00Z,1.0,L,0.0,65.68
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,66.12,INR,True,2026-10-09T10:00:00Z,1.0,L,0.0,66.12
+1,Amul Taaza Milk,Amul,Dairy,4,Flipkart Minutes,68.22,INR,True,2026-10-10T10:00:00Z,1.0,L,0.0,68.22
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,266.18,INR,True,2026-09-01T10:00:00Z,5.0,kg,0.0,266.18
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,259.14,INR,True,2026-09-02T10:00:00Z,5.0,kg,0.0,259.14
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,263.62,INR,True,2026-09-03T10:00:00Z,5.0,kg,0.0,263.62
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,267.16,INR,True,2026-09-04T10:00:00Z,5.0,kg,0.0,267.16
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,260.78,INR,True,2026-09-05T10:00:00Z,5.0,kg,12.0,248.78
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,271.54,INR,True,2026-09-06T10:00:00Z,5.0,kg,12.0,259.54
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,265.69,INR,True,2026-09-07T10:00:00Z,5.0,kg,0.0,265.69
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,269.38,INR,True,2026-09-08T10:00:00Z,5.0,kg,0.0,269.38
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,259.18,INR,True,2026-09-09T10:00:00Z,5.0,kg,0.0,259.18
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,262.21,INR,True,2026-09-10T10:00:00Z,5.0,kg,0.0,262.21
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,269.15,INR,True,2026-09-11T10:00:00Z,5.0,kg,0.0,269.15
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,263.55,INR,True,2026-09-12T10:00:00Z,5.0,kg,15.0,248.55
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,270.01,INR,True,2026-09-13T10:00:00Z,5.0,kg,0.0,270.01
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,271.36,INR,True,2026-09-14T10:00:00Z,5.0,kg,0.0,271.36
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,261.99,INR,True,2026-09-15T10:00:00Z,5.0,kg,0.0,261.99
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,265.42,INR,True,2026-09-16T10:00:00Z,5.0,kg,0.0,265.42
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,265.67,INR,True,2026-09-17T10:00:00Z,5.0,kg,0.0,265.67
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,268.18,INR,True,2026-09-18T10:00:00Z,5.0,kg,0.0,268.18
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,268.61,INR,True,2026-09-19T10:00:00Z,5.0,kg,15.0,253.61
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,262.66,INR,True,2026-09-20T10:00:00Z,5.0,kg,0.0,262.66
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,265.61,INR,True,2026-09-21T10:00:00Z,5.0,kg,0.0,265.61
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,259.75,INR,True,2026-09-22T10:00:00Z,5.0,kg,0.0,259.75
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,264.73,INR,True,2026-09-23T10:00:00Z,5.0,kg,0.0,264.73
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,260.53,INR,True,2026-09-24T10:00:00Z,5.0,kg,0.0,260.53
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,270.01,INR,True,2026-09-25T10:00:00Z,5.0,kg,0.0,270.01
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,270.3,INR,True,2026-09-26T10:00:00Z,5.0,kg,0.0,270.3
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,262.12,INR,True,2026-09-27T10:00:00Z,5.0,kg,0.0,262.12
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,266.47,INR,True,2026-09-28T10:00:00Z,5.0,kg,0.0,266.47
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,258.9,INR,True,2026-09-29T10:00:00Z,5.0,kg,0.0,258.9
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,270.37,INR,True,2026-09-30T10:00:00Z,5.0,kg,0.0,270.37
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,263.05,INR,True,2026-10-01T10:00:00Z,5.0,kg,0.0,263.05
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,260.74,INR,True,2026-10-02T10:00:00Z,5.0,kg,0.0,260.74
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,269.94,INR,True,2026-10-03T10:00:00Z,5.0,kg,10.0,259.94
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,267.05,INR,True,2026-10-04T10:00:00Z,5.0,kg,0.0,267.05
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,263.3,INR,True,2026-10-05T10:00:00Z,5.0,kg,0.0,263.3
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,265.06,INR,True,2026-10-06T10:00:00Z,5.0,kg,0.0,265.06
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,266.54,INR,True,2026-10-07T10:00:00Z,5.0,kg,0.0,266.54
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,266.4,INR,True,2026-10-08T10:00:00Z,5.0,kg,0.0,266.4
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,266.34,INR,True,2026-10-09T10:00:00Z,5.0,kg,0.0,266.34
+2,Aashirvaad Atta,Aashirvaad,Staples,1,Blinkit,259.53,INR,True,2026-10-10T10:00:00Z,5.0,kg,0.0,259.53
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,256.93,INR,True,2026-09-01T10:00:00Z,5.0,kg,0.0,256.93
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,263.09,INR,True,2026-09-02T10:00:00Z,5.0,kg,0.0,263.09
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,258.46,INR,True,2026-09-03T10:00:00Z,5.0,kg,0.0,258.46
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,261.16,INR,True,2026-09-04T10:00:00Z,5.0,kg,0.0,261.16
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,256.13,INR,True,2026-09-05T10:00:00Z,5.0,kg,0.0,256.13
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,258.36,INR,True,2026-09-06T10:00:00Z,5.0,kg,15.0,243.36
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,259.93,INR,True,2026-09-07T10:00:00Z,5.0,kg,0.0,259.93
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,262.94,INR,True,2026-09-08T10:00:00Z,5.0,kg,0.0,262.94
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,258.87,INR,True,2026-09-09T10:00:00Z,5.0,kg,0.0,258.87
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,254.8,INR,True,2026-09-10T10:00:00Z,5.0,kg,0.0,254.8
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,259.11,INR,True,2026-09-11T10:00:00Z,5.0,kg,0.0,259.11
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,257.15,INR,True,2026-09-12T10:00:00Z,5.0,kg,10.0,247.15
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,263.29,INR,True,2026-09-13T10:00:00Z,5.0,kg,12.0,251.29
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,255.96,INR,True,2026-09-14T10:00:00Z,5.0,kg,0.0,255.96
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,261.83,INR,True,2026-09-15T10:00:00Z,5.0,kg,0.0,261.83
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,254.97,INR,True,2026-09-16T10:00:00Z,5.0,kg,0.0,254.97
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,258.49,INR,True,2026-09-17T10:00:00Z,5.0,kg,0.0,258.49
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,264.74,INR,True,2026-09-18T10:00:00Z,5.0,kg,0.0,264.74
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,256.35,INR,True,2026-09-19T10:00:00Z,5.0,kg,0.0,256.35
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,254.28,INR,True,2026-09-20T10:00:00Z,5.0,kg,0.0,254.28
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,260.13,INR,True,2026-09-21T10:00:00Z,5.0,kg,0.0,260.13
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,261.74,INR,True,2026-09-22T10:00:00Z,5.0,kg,0.0,261.74
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,254.85,INR,True,2026-09-23T10:00:00Z,5.0,kg,0.0,254.85
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,256.65,INR,True,2026-09-24T10:00:00Z,5.0,kg,0.0,256.65
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,253.01,INR,True,2026-09-25T10:00:00Z,5.0,kg,0.0,253.01
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,261.87,INR,True,2026-09-26T10:00:00Z,5.0,kg,0.0,261.87
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,257.16,INR,True,2026-09-27T10:00:00Z,5.0,kg,10.0,247.16
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,263.2,INR,True,2026-09-28T10:00:00Z,5.0,kg,0.0,263.2
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,253.47,INR,True,2026-09-29T10:00:00Z,5.0,kg,0.0,253.47
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,255.04,INR,True,2026-09-30T10:00:00Z,5.0,kg,0.0,255.04
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,259.02,INR,True,2026-10-01T10:00:00Z,5.0,kg,0.0,259.02
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,262.55,INR,True,2026-10-02T10:00:00Z,5.0,kg,0.0,262.55
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,254.08,INR,True,2026-10-03T10:00:00Z,5.0,kg,15.0,239.08
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,258.26,INR,True,2026-10-04T10:00:00Z,5.0,kg,15.0,243.26
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,261.41,INR,True,2026-10-05T10:00:00Z,5.0,kg,0.0,261.41
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,259.65,INR,True,2026-10-06T10:00:00Z,5.0,kg,0.0,259.65
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,264.49,INR,True,2026-10-07T10:00:00Z,5.0,kg,0.0,264.49
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,257.18,INR,True,2026-10-08T10:00:00Z,5.0,kg,0.0,257.18
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,253.16,INR,True,2026-10-09T10:00:00Z,5.0,kg,0.0,253.16
+2,Aashirvaad Atta,Aashirvaad,Staples,2,Zepto,254.79,INR,True,2026-10-10T10:00:00Z,5.0,kg,10.0,244.79
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,270.37,INR,True,2026-09-01T10:00:00Z,5.0,kg,0.0,270.37
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,278.08,INR,True,2026-09-02T10:00:00Z,5.0,kg,0.0,278.08
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,272.08,INR,True,2026-09-03T10:00:00Z,5.0,kg,0.0,272.08
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,267.81,INR,True,2026-09-04T10:00:00Z,5.0,kg,0.0,267.81
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,275.39,INR,True,2026-09-05T10:00:00Z,5.0,kg,12.0,263.39
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,278.09,INR,True,2026-09-06T10:00:00Z,5.0,kg,10.0,268.09
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,275.33,INR,True,2026-09-07T10:00:00Z,5.0,kg,0.0,275.33
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,276.9,INR,True,2026-09-08T10:00:00Z,5.0,kg,0.0,276.9
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,266.09,INR,True,2026-09-09T10:00:00Z,5.0,kg,0.0,266.09
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,266.18,INR,True,2026-09-10T10:00:00Z,5.0,kg,0.0,266.18
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,269.85,INR,True,2026-09-11T10:00:00Z,5.0,kg,0.0,269.85
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,269.99,INR,True,2026-09-12T10:00:00Z,5.0,kg,15.0,254.99
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,269.91,INR,True,2026-09-13T10:00:00Z,5.0,kg,0.0,269.91
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,273.14,INR,True,2026-09-14T10:00:00Z,5.0,kg,0.0,273.14
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,267.59,INR,True,2026-09-15T10:00:00Z,5.0,kg,0.0,267.59
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,273.56,INR,True,2026-09-16T10:00:00Z,5.0,kg,0.0,273.56
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,267.7,INR,True,2026-09-17T10:00:00Z,5.0,kg,0.0,267.7
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,266.39,INR,True,2026-09-18T10:00:00Z,5.0,kg,0.0,266.39
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,269.87,INR,True,2026-09-19T10:00:00Z,5.0,kg,0.0,269.87
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,274.74,INR,True,2026-09-20T10:00:00Z,5.0,kg,10.0,264.74
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,278.1,INR,True,2026-09-21T10:00:00Z,5.0,kg,0.0,278.1
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,274.73,INR,True,2026-09-22T10:00:00Z,5.0,kg,0.0,274.73
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,266.0,INR,True,2026-09-23T10:00:00Z,5.0,kg,0.0,266.0
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,275.15,INR,True,2026-09-24T10:00:00Z,5.0,kg,0.0,275.15
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,265.73,INR,True,2026-09-25T10:00:00Z,5.0,kg,0.0,265.73
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,,INR,False,2026-09-26T10:00:00Z,5.0,kg,,
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,269.7,INR,True,2026-09-27T10:00:00Z,5.0,kg,15.0,254.7
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,265.83,INR,True,2026-09-28T10:00:00Z,5.0,kg,0.0,265.83
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,275.89,INR,True,2026-09-29T10:00:00Z,5.0,kg,0.0,275.89
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,273.97,INR,True,2026-09-30T10:00:00Z,5.0,kg,0.0,273.97
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,272.2,INR,True,2026-10-01T10:00:00Z,5.0,kg,0.0,272.2
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,275.37,INR,True,2026-10-02T10:00:00Z,5.0,kg,0.0,275.37
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,276.73,INR,True,2026-10-03T10:00:00Z,5.0,kg,12.0,264.73
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,271.55,INR,True,2026-10-04T10:00:00Z,5.0,kg,0.0,271.55
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,273.97,INR,True,2026-10-05T10:00:00Z,5.0,kg,0.0,273.97
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,276.44,INR,True,2026-10-06T10:00:00Z,5.0,kg,0.0,276.44
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,266.73,INR,True,2026-10-07T10:00:00Z,5.0,kg,0.0,266.73
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,267.7,INR,True,2026-10-08T10:00:00Z,5.0,kg,0.0,267.7
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,276.81,INR,True,2026-10-09T10:00:00Z,5.0,kg,0.0,276.81
+2,Aashirvaad Atta,Aashirvaad,Staples,3,Instamart,276.07,INR,True,2026-10-10T10:00:00Z,5.0,kg,0.0,276.07
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,266.02,INR,True,2026-09-01T10:00:00Z,5.0,kg,0.0,266.02
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,264.79,INR,True,2026-09-02T10:00:00Z,5.0,kg,0.0,264.79
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,260.29,INR,True,2026-09-03T10:00:00Z,5.0,kg,0.0,260.29
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,260.77,INR,True,2026-09-04T10:00:00Z,5.0,kg,0.0,260.77
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,265.33,INR,True,2026-09-05T10:00:00Z,5.0,kg,0.0,265.33
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,257.73,INR,True,2026-09-06T10:00:00Z,5.0,kg,10.0,247.73
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,261.94,INR,True,2026-09-07T10:00:00Z,5.0,kg,0.0,261.94
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,255.63,INR,True,2026-09-08T10:00:00Z,5.0,kg,0.0,255.63
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,261.39,INR,True,2026-09-09T10:00:00Z,5.0,kg,0.0,261.39
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,266.74,INR,True,2026-09-10T10:00:00Z,5.0,kg,0.0,266.74
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,259.32,INR,True,2026-09-11T10:00:00Z,5.0,kg,0.0,259.32
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,263.73,INR,True,2026-09-12T10:00:00Z,5.0,kg,0.0,263.73
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,257.09,INR,True,2026-09-13T10:00:00Z,5.0,kg,15.0,242.09
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,255.86,INR,True,2026-09-14T10:00:00Z,5.0,kg,0.0,255.86
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,256.59,INR,True,2026-09-15T10:00:00Z,5.0,kg,0.0,256.59
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,256.77,INR,True,2026-09-16T10:00:00Z,5.0,kg,0.0,256.77
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,266.44,INR,True,2026-09-17T10:00:00Z,5.0,kg,0.0,266.44
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,256.62,INR,True,2026-09-18T10:00:00Z,5.0,kg,0.0,256.62
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,259.63,INR,True,2026-09-19T10:00:00Z,5.0,kg,15.0,244.63
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,263.01,INR,True,2026-09-20T10:00:00Z,5.0,kg,12.0,251.01
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,261.0,INR,True,2026-09-21T10:00:00Z,5.0,kg,0.0,261.0
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,262.07,INR,True,2026-09-22T10:00:00Z,5.0,kg,0.0,262.07
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,258.7,INR,True,2026-09-23T10:00:00Z,5.0,kg,0.0,258.7
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,264.68,INR,True,2026-09-24T10:00:00Z,5.0,kg,0.0,264.68
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,267.51,INR,True,2026-09-25T10:00:00Z,5.0,kg,0.0,267.51
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,259.95,INR,True,2026-09-26T10:00:00Z,5.0,kg,0.0,259.95
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,257.4,INR,True,2026-09-27T10:00:00Z,5.0,kg,15.0,242.4
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,264.08,INR,True,2026-09-28T10:00:00Z,5.0,kg,0.0,264.08
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,258.35,INR,True,2026-09-29T10:00:00Z,5.0,kg,0.0,258.35
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,258.04,INR,True,2026-09-30T10:00:00Z,5.0,kg,0.0,258.04
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,260.2,INR,True,2026-10-01T10:00:00Z,5.0,kg,0.0,260.2
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,262.11,INR,True,2026-10-02T10:00:00Z,5.0,kg,0.0,262.11
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,268.35,INR,True,2026-10-03T10:00:00Z,5.0,kg,0.0,268.35
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,263.19,INR,True,2026-10-04T10:00:00Z,5.0,kg,15.0,248.19
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,259.6,INR,True,2026-10-05T10:00:00Z,5.0,kg,0.0,259.6
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,260.36,INR,True,2026-10-06T10:00:00Z,5.0,kg,0.0,260.36
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,259.95,INR,True,2026-10-07T10:00:00Z,5.0,kg,0.0,259.95
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,257.98,INR,True,2026-10-08T10:00:00Z,5.0,kg,0.0,257.98
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,256.09,INR,True,2026-10-09T10:00:00Z,5.0,kg,0.0,256.09
+2,Aashirvaad Atta,Aashirvaad,Staples,4,Flipkart Minutes,265.61,INR,True,2026-10-10T10:00:00Z,5.0,kg,10.0,255.61
+3,Tata Salt,Tata,Staples,1,Blinkit,28.46,INR,True,2026-09-01T10:00:00Z,1.0,kg,0.0,28.46
+3,Tata Salt,Tata,Staples,1,Blinkit,27.47,INR,True,2026-09-02T10:00:00Z,1.0,kg,0.0,27.47
+3,Tata Salt,Tata,Staples,1,Blinkit,28.24,INR,True,2026-09-03T10:00:00Z,1.0,kg,0.0,28.24
+3,Tata Salt,Tata,Staples,1,Blinkit,27.95,INR,True,2026-09-04T10:00:00Z,1.0,kg,0.0,27.95
+3,Tata Salt,Tata,Staples,1,Blinkit,27.63,INR,True,2026-09-05T10:00:00Z,1.0,kg,1.0,26.63
+3,Tata Salt,Tata,Staples,1,Blinkit,27.62,INR,True,2026-09-06T10:00:00Z,1.0,kg,0.0,27.62
+3,Tata Salt,Tata,Staples,1,Blinkit,27.44,INR,True,2026-09-07T10:00:00Z,1.0,kg,0.0,27.44
+3,Tata Salt,Tata,Staples,1,Blinkit,28.45,INR,True,2026-09-08T10:00:00Z,1.0,kg,0.0,28.45
+3,Tata Salt,Tata,Staples,1,Blinkit,27.9,INR,True,2026-09-09T10:00:00Z,1.0,kg,0.0,27.9
+3,Tata Salt,Tata,Staples,1,Blinkit,27.87,INR,True,2026-09-10T10:00:00Z,1.0,kg,0.0,27.87
+3,Tata Salt,Tata,Staples,1,Blinkit,28.53,INR,True,2026-09-11T10:00:00Z,1.0,kg,0.0,28.53
+3,Tata Salt,Tata,Staples,1,Blinkit,27.58,INR,True,2026-09-12T10:00:00Z,1.0,kg,0.0,27.58
+3,Tata Salt,Tata,Staples,1,Blinkit,27.54,INR,True,2026-09-13T10:00:00Z,1.0,kg,0.0,27.54
+3,Tata Salt,Tata,Staples,1,Blinkit,27.89,INR,True,2026-09-14T10:00:00Z,1.0,kg,0.0,27.89
+3,Tata Salt,Tata,Staples,1,Blinkit,28.61,INR,True,2026-09-15T10:00:00Z,1.0,kg,0.0,28.61
+3,Tata Salt,Tata,Staples,1,Blinkit,27.86,INR,True,2026-09-16T10:00:00Z,1.0,kg,0.0,27.86
+3,Tata Salt,Tata,Staples,1,Blinkit,27.49,INR,True,2026-09-17T10:00:00Z,1.0,kg,0.0,27.49
+3,Tata Salt,Tata,Staples,1,Blinkit,27.71,INR,True,2026-09-18T10:00:00Z,1.0,kg,0.0,27.71
+3,Tata Salt,Tata,Staples,1,Blinkit,28.25,INR,True,2026-09-19T10:00:00Z,1.0,kg,1.0,27.25
+3,Tata Salt,Tata,Staples,1,Blinkit,27.86,INR,True,2026-09-20T10:00:00Z,1.0,kg,0.0,27.86
+3,Tata Salt,Tata,Staples,1,Blinkit,27.73,INR,True,2026-09-21T10:00:00Z,1.0,kg,0.0,27.73
+3,Tata Salt,Tata,Staples,1,Blinkit,27.63,INR,True,2026-09-22T10:00:00Z,1.0,kg,0.0,27.63
+3,Tata Salt,Tata,Staples,1,Blinkit,27.8,INR,True,2026-09-23T10:00:00Z,1.0,kg,0.0,27.8
+3,Tata Salt,Tata,Staples,1,Blinkit,27.52,INR,True,2026-09-24T10:00:00Z,1.0,kg,0.0,27.52
+3,Tata Salt,Tata,Staples,1,Blinkit,28.48,INR,True,2026-09-25T10:00:00Z,1.0,kg,0.0,28.48
+3,Tata Salt,Tata,Staples,1,Blinkit,28.01,INR,True,2026-09-26T10:00:00Z,1.0,kg,0.0,28.01
+3,Tata Salt,Tata,Staples,1,Blinkit,27.94,INR,True,2026-09-27T10:00:00Z,1.0,kg,0.0,27.94
+3,Tata Salt,Tata,Staples,1,Blinkit,28.07,INR,True,2026-09-28T10:00:00Z,1.0,kg,0.0,28.07
+3,Tata Salt,Tata,Staples,1,Blinkit,27.71,INR,True,2026-09-29T10:00:00Z,1.0,kg,0.0,27.71
+3,Tata Salt,Tata,Staples,1,Blinkit,27.44,INR,True,2026-09-30T10:00:00Z,1.0,kg,0.0,27.44
+3,Tata Salt,Tata,Staples,1,Blinkit,28.31,INR,True,2026-10-01T10:00:00Z,1.0,kg,0.0,28.31
+3,Tata Salt,Tata,Staples,1,Blinkit,28.65,INR,True,2026-10-02T10:00:00Z,1.0,kg,0.0,28.65
+3,Tata Salt,Tata,Staples,1,Blinkit,27.38,INR,True,2026-10-03T10:00:00Z,1.0,kg,0.0,27.38
+3,Tata Salt,Tata,Staples,1,Blinkit,28.06,INR,True,2026-10-04T10:00:00Z,1.0,kg,0.0,28.06
+3,Tata Salt,Tata,Staples,1,Blinkit,27.33,INR,True,2026-10-05T10:00:00Z,1.0,kg,0.0,27.33
+3,Tata Salt,Tata,Staples,1,Blinkit,28.64,INR,True,2026-10-06T10:00:00Z,1.0,kg,0.0,28.64
+3,Tata Salt,Tata,Staples,1,Blinkit,27.59,INR,True,2026-10-07T10:00:00Z,1.0,kg,0.0,27.59
+3,Tata Salt,Tata,Staples,1,Blinkit,27.61,INR,True,2026-10-08T10:00:00Z,1.0,kg,0.0,27.61
+3,Tata Salt,Tata,Staples,1,Blinkit,28.16,INR,True,2026-10-09T10:00:00Z,1.0,kg,0.0,28.16
+3,Tata Salt,Tata,Staples,1,Blinkit,27.94,INR,True,2026-10-10T10:00:00Z,1.0,kg,0.0,27.94
+3,Tata Salt,Tata,Staples,2,Zepto,26.39,INR,True,2026-09-01T10:00:00Z,1.0,kg,0.0,26.39
+3,Tata Salt,Tata,Staples,2,Zepto,27.12,INR,True,2026-09-02T10:00:00Z,1.0,kg,0.0,27.12
+3,Tata Salt,Tata,Staples,2,Zepto,26.48,INR,True,2026-09-03T10:00:00Z,1.0,kg,0.0,26.48
+3,Tata Salt,Tata,Staples,2,Zepto,27.4,INR,True,2026-09-04T10:00:00Z,1.0,kg,0.0,27.4
+3,Tata Salt,Tata,Staples,2,Zepto,27.14,INR,True,2026-09-05T10:00:00Z,1.0,kg,0.0,27.14
+3,Tata Salt,Tata,Staples,2,Zepto,26.9,INR,True,2026-09-06T10:00:00Z,1.0,kg,1.0,25.9
+3,Tata Salt,Tata,Staples,2,Zepto,26.43,INR,True,2026-09-07T10:00:00Z,1.0,kg,0.0,26.43
+3,Tata Salt,Tata,Staples,2,Zepto,27.16,INR,True,2026-09-08T10:00:00Z,1.0,kg,0.0,27.16
+3,Tata Salt,Tata,Staples,2,Zepto,27.31,INR,True,2026-09-09T10:00:00Z,1.0,kg,0.0,27.31
+3,Tata Salt,Tata,Staples,2,Zepto,26.44,INR,True,2026-09-10T10:00:00Z,1.0,kg,0.0,26.44
+3,Tata Salt,Tata,Staples,2,Zepto,27.45,INR,True,2026-09-11T10:00:00Z,1.0,kg,0.0,27.45
+3,Tata Salt,Tata,Staples,2,Zepto,27.66,INR,True,2026-09-12T10:00:00Z,1.0,kg,2.0,25.66
+3,Tata Salt,Tata,Staples,2,Zepto,26.39,INR,True,2026-09-13T10:00:00Z,1.0,kg,0.0,26.39
+3,Tata Salt,Tata,Staples,2,Zepto,27.5,INR,True,2026-09-14T10:00:00Z,1.0,kg,0.0,27.5
+3,Tata Salt,Tata,Staples,2,Zepto,27.34,INR,True,2026-09-15T10:00:00Z,1.0,kg,0.0,27.34
+3,Tata Salt,Tata,Staples,2,Zepto,27.01,INR,True,2026-09-16T10:00:00Z,1.0,kg,0.0,27.01
+3,Tata Salt,Tata,Staples,2,Zepto,27.01,INR,True,2026-09-17T10:00:00Z,1.0,kg,0.0,27.01
+3,Tata Salt,Tata,Staples,2,Zepto,27.1,INR,True,2026-09-18T10:00:00Z,1.0,kg,0.0,27.1
+3,Tata Salt,Tata,Staples,2,Zepto,27.62,INR,True,2026-09-19T10:00:00Z,1.0,kg,2.0,25.62
+3,Tata Salt,Tata,Staples,2,Zepto,27.11,INR,True,2026-09-20T10:00:00Z,1.0,kg,0.0,27.11
+3,Tata Salt,Tata,Staples,2,Zepto,26.85,INR,True,2026-09-21T10:00:00Z,1.0,kg,0.0,26.85
+3,Tata Salt,Tata,Staples,2,Zepto,26.75,INR,True,2026-09-22T10:00:00Z,1.0,kg,0.0,26.75
+3,Tata Salt,Tata,Staples,2,Zepto,27.41,INR,True,2026-09-23T10:00:00Z,1.0,kg,0.0,27.41
+3,Tata Salt,Tata,Staples,2,Zepto,27.27,INR,True,2026-09-24T10:00:00Z,1.0,kg,0.0,27.27
+3,Tata Salt,Tata,Staples,2,Zepto,27.64,INR,True,2026-09-25T10:00:00Z,1.0,kg,0.0,27.64
+3,Tata Salt,Tata,Staples,2,Zepto,26.96,INR,True,2026-09-26T10:00:00Z,1.0,kg,0.0,26.96
+3,Tata Salt,Tata,Staples,2,Zepto,27.51,INR,True,2026-09-27T10:00:00Z,1.0,kg,0.0,27.51
+3,Tata Salt,Tata,Staples,2,Zepto,27.26,INR,True,2026-09-28T10:00:00Z,1.0,kg,0.0,27.26
+3,Tata Salt,Tata,Staples,2,Zepto,26.48,INR,True,2026-09-29T10:00:00Z,1.0,kg,0.0,26.48
+3,Tata Salt,Tata,Staples,2,Zepto,26.77,INR,True,2026-09-30T10:00:00Z,1.0,kg,0.0,26.77
+3,Tata Salt,Tata,Staples,2,Zepto,27.12,INR,True,2026-10-01T10:00:00Z,1.0,kg,0.0,27.12
+3,Tata Salt,Tata,Staples,2,Zepto,27.57,INR,True,2026-10-02T10:00:00Z,1.0,kg,0.0,27.57
+3,Tata Salt,Tata,Staples,2,Zepto,26.86,INR,True,2026-10-03T10:00:00Z,1.0,kg,0.0,26.86
+3,Tata Salt,Tata,Staples,2,Zepto,26.54,INR,True,2026-10-04T10:00:00Z,1.0,kg,1.0,25.54
+3,Tata Salt,Tata,Staples,2,Zepto,26.98,INR,True,2026-10-05T10:00:00Z,1.0,kg,0.0,26.98
+3,Tata Salt,Tata,Staples,2,Zepto,27.02,INR,True,2026-10-06T10:00:00Z,1.0,kg,0.0,27.02
+3,Tata Salt,Tata,Staples,2,Zepto,27.17,INR,True,2026-10-07T10:00:00Z,1.0,kg,0.0,27.17
+3,Tata Salt,Tata,Staples,2,Zepto,27.58,INR,True,2026-10-08T10:00:00Z,1.0,kg,0.0,27.58
+3,Tata Salt,Tata,Staples,2,Zepto,27.58,INR,True,2026-10-09T10:00:00Z,1.0,kg,0.0,27.58
+3,Tata Salt,Tata,Staples,2,Zepto,26.77,INR,True,2026-10-10T10:00:00Z,1.0,kg,0.0,26.77
+3,Tata Salt,Tata,Staples,3,Instamart,29.53,INR,True,2026-09-01T10:00:00Z,1.0,kg,0.0,29.53
+3,Tata Salt,Tata,Staples,3,Instamart,29.59,INR,True,2026-09-02T10:00:00Z,1.0,kg,0.0,29.59
+3,Tata Salt,Tata,Staples,3,Instamart,29.15,INR,True,2026-09-03T10:00:00Z,1.0,kg,0.0,29.15
+3,Tata Salt,Tata,Staples,3,Instamart,28.41,INR,True,2026-09-04T10:00:00Z,1.0,kg,0.0,28.41
+3,Tata Salt,Tata,Staples,3,Instamart,29.11,INR,True,2026-09-05T10:00:00Z,1.0,kg,0.0,29.11
+3,Tata Salt,Tata,Staples,3,Instamart,29.42,INR,True,2026-09-06T10:00:00Z,1.0,kg,2.0,27.42
+3,Tata Salt,Tata,Staples,3,Instamart,29.51,INR,True,2026-09-07T10:00:00Z,1.0,kg,0.0,29.51
+3,Tata Salt,Tata,Staples,3,Instamart,29.2,INR,True,2026-09-08T10:00:00Z,1.0,kg,0.0,29.2
+3,Tata Salt,Tata,Staples,3,Instamart,28.82,INR,True,2026-09-09T10:00:00Z,1.0,kg,0.0,28.82
+3,Tata Salt,Tata,Staples,3,Instamart,28.85,INR,True,2026-09-10T10:00:00Z,1.0,kg,0.0,28.85
+3,Tata Salt,Tata,Staples,3,Instamart,28.34,INR,True,2026-09-11T10:00:00Z,1.0,kg,0.0,28.34
+3,Tata Salt,Tata,Staples,3,Instamart,29.53,INR,True,2026-09-12T10:00:00Z,1.0,kg,2.0,27.53
+3,Tata Salt,Tata,Staples,3,Instamart,29.0,INR,True,2026-09-13T10:00:00Z,1.0,kg,0.0,29.0
+3,Tata Salt,Tata,Staples,3,Instamart,29.09,INR,True,2026-09-14T10:00:00Z,1.0,kg,0.0,29.09
+3,Tata Salt,Tata,Staples,3,Instamart,29.28,INR,True,2026-09-15T10:00:00Z,1.0,kg,0.0,29.28
+3,Tata Salt,Tata,Staples,3,Instamart,28.62,INR,True,2026-09-16T10:00:00Z,1.0,kg,0.0,28.62
+3,Tata Salt,Tata,Staples,3,Instamart,28.3,INR,True,2026-09-17T10:00:00Z,1.0,kg,0.0,28.3
+3,Tata Salt,Tata,Staples,3,Instamart,28.66,INR,True,2026-09-18T10:00:00Z,1.0,kg,0.0,28.66
+3,Tata Salt,Tata,Staples,3,Instamart,29.34,INR,True,2026-09-19T10:00:00Z,1.0,kg,0.0,29.34
+3,Tata Salt,Tata,Staples,3,Instamart,29.51,INR,True,2026-09-20T10:00:00Z,1.0,kg,0.0,29.51
+3,Tata Salt,Tata,Staples,3,Instamart,29.33,INR,True,2026-09-21T10:00:00Z,1.0,kg,0.0,29.33
+3,Tata Salt,Tata,Staples,3,Instamart,29.41,INR,True,2026-09-22T10:00:00Z,1.0,kg,0.0,29.41
+3,Tata Salt,Tata,Staples,3,Instamart,29.65,INR,True,2026-09-23T10:00:00Z,1.0,kg,0.0,29.65
+3,Tata Salt,Tata,Staples,3,Instamart,28.71,INR,True,2026-09-24T10:00:00Z,1.0,kg,0.0,28.71
+3,Tata Salt,Tata,Staples,3,Instamart,29.15,INR,True,2026-09-25T10:00:00Z,1.0,kg,0.0,29.15
+3,Tata Salt,Tata,Staples,3,Instamart,29.22,INR,True,2026-09-26T10:00:00Z,1.0,kg,1.0,28.22
+3,Tata Salt,Tata,Staples,3,Instamart,28.41,INR,True,2026-09-27T10:00:00Z,1.0,kg,0.0,28.41
+3,Tata Salt,Tata,Staples,3,Instamart,29.23,INR,True,2026-09-28T10:00:00Z,1.0,kg,0.0,29.23
+3,Tata Salt,Tata,Staples,3,Instamart,29.67,INR,True,2026-09-29T10:00:00Z,1.0,kg,0.0,29.67
+3,Tata Salt,Tata,Staples,3,Instamart,29.45,INR,True,2026-09-30T10:00:00Z,1.0,kg,0.0,29.45
+3,Tata Salt,Tata,Staples,3,Instamart,29.11,INR,True,2026-10-01T10:00:00Z,1.0,kg,0.0,29.11
+3,Tata Salt,Tata,Staples,3,Instamart,28.81,INR,True,2026-10-02T10:00:00Z,1.0,kg,0.0,28.81
+3,Tata Salt,Tata,Staples,3,Instamart,28.73,INR,True,2026-10-03T10:00:00Z,1.0,kg,1.0,27.73
+3,Tata Salt,Tata,Staples,3,Instamart,29.27,INR,True,2026-10-04T10:00:00Z,1.0,kg,2.0,27.27
+3,Tata Salt,Tata,Staples,3,Instamart,28.55,INR,True,2026-10-05T10:00:00Z,1.0,kg,0.0,28.55
+3,Tata Salt,Tata,Staples,3,Instamart,29.52,INR,True,2026-10-06T10:00:00Z,1.0,kg,0.0,29.52
+3,Tata Salt,Tata,Staples,3,Instamart,28.65,INR,True,2026-10-07T10:00:00Z,1.0,kg,0.0,28.65
+3,Tata Salt,Tata,Staples,3,Instamart,29.53,INR,True,2026-10-08T10:00:00Z,1.0,kg,0.0,29.53
+3,Tata Salt,Tata,Staples,3,Instamart,29.58,INR,True,2026-10-09T10:00:00Z,1.0,kg,0.0,29.58
+3,Tata Salt,Tata,Staples,3,Instamart,29.2,INR,True,2026-10-10T10:00:00Z,1.0,kg,1.0,28.2
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.53,INR,True,2026-09-01T10:00:00Z,1.0,kg,0.0,27.53
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.6,INR,True,2026-09-02T10:00:00Z,1.0,kg,0.0,27.6
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.65,INR,True,2026-09-03T10:00:00Z,1.0,kg,0.0,27.65
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.51,INR,True,2026-09-04T10:00:00Z,1.0,kg,0.0,27.51
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.41,INR,True,2026-09-05T10:00:00Z,1.0,kg,0.0,27.41
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.28,INR,True,2026-09-06T10:00:00Z,1.0,kg,0.0,28.28
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.52,INR,True,2026-09-07T10:00:00Z,1.0,kg,0.0,28.52
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.46,INR,True,2026-09-08T10:00:00Z,1.0,kg,0.0,27.46
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.46,INR,True,2026-09-09T10:00:00Z,1.0,kg,0.0,28.46
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.39,INR,True,2026-09-10T10:00:00Z,1.0,kg,0.0,28.39
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.35,INR,True,2026-09-11T10:00:00Z,1.0,kg,0.0,28.35
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.34,INR,True,2026-09-12T10:00:00Z,1.0,kg,0.0,28.34
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.43,INR,True,2026-09-13T10:00:00Z,1.0,kg,0.0,28.43
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.94,INR,True,2026-09-14T10:00:00Z,1.0,kg,0.0,27.94
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.52,INR,True,2026-09-15T10:00:00Z,1.0,kg,0.0,27.52
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.69,INR,True,2026-09-16T10:00:00Z,1.0,kg,0.0,27.69
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.05,INR,True,2026-09-17T10:00:00Z,1.0,kg,0.0,28.05
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.91,INR,True,2026-09-18T10:00:00Z,1.0,kg,0.0,27.91
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.29,INR,True,2026-09-19T10:00:00Z,1.0,kg,1.0,27.29
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.68,INR,True,2026-09-20T10:00:00Z,1.0,kg,0.0,27.68
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.93,INR,True,2026-09-21T10:00:00Z,1.0,kg,0.0,27.93
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.74,INR,True,2026-09-22T10:00:00Z,1.0,kg,0.0,27.74
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.55,INR,True,2026-09-23T10:00:00Z,1.0,kg,0.0,27.55
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.52,INR,True,2026-09-24T10:00:00Z,1.0,kg,0.0,27.52
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.34,INR,True,2026-09-25T10:00:00Z,1.0,kg,0.0,28.34
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.12,INR,True,2026-09-26T10:00:00Z,1.0,kg,1.0,27.12
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.76,INR,True,2026-09-27T10:00:00Z,1.0,kg,0.0,27.76
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.68,INR,True,2026-09-28T10:00:00Z,1.0,kg,0.0,27.68
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.06,INR,True,2026-09-29T10:00:00Z,1.0,kg,0.0,28.06
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.3,INR,True,2026-09-30T10:00:00Z,1.0,kg,0.0,28.3
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.38,INR,True,2026-10-01T10:00:00Z,1.0,kg,0.0,27.38
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.3,INR,True,2026-10-02T10:00:00Z,1.0,kg,0.0,28.3
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.16,INR,True,2026-10-03T10:00:00Z,1.0,kg,2.0,26.16
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.42,INR,True,2026-10-04T10:00:00Z,1.0,kg,1.0,27.42
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.69,INR,True,2026-10-05T10:00:00Z,1.0,kg,0.0,27.69
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.43,INR,True,2026-10-06T10:00:00Z,1.0,kg,0.0,27.43
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.37,INR,True,2026-10-07T10:00:00Z,1.0,kg,0.0,27.37
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.31,INR,True,2026-10-08T10:00:00Z,1.0,kg,0.0,28.31
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,27.49,INR,True,2026-10-09T10:00:00Z,1.0,kg,0.0,27.49
+3,Tata Salt,Tata,Staples,4,Flipkart Minutes,28.38,INR,True,2026-10-10T10:00:00Z,1.0,kg,0.0,28.38
+4,Tata Tea,Tata,Beverages,1,Blinkit,145.79,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,145.79
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.23,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,147.23
+4,Tata Tea,Tata,Beverages,1,Blinkit,141.4,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,141.4
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.68,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,144.68
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.15,INR,True,2026-09-05T10:00:00Z,250.0,g,2.0,145.15
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.82,INR,True,2026-09-06T10:00:00Z,250.0,g,0.0,147.82
+4,Tata Tea,Tata,Beverages,1,Blinkit,148.61,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,148.61
+4,Tata Tea,Tata,Beverages,1,Blinkit,142.22,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,142.22
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.26,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,147.26
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.94,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,147.94
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.93,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,147.93
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.04,INR,True,2026-09-12T10:00:00Z,250.0,g,0.0,144.04
+4,Tata Tea,Tata,Beverages,1,Blinkit,142.52,INR,True,2026-09-13T10:00:00Z,250.0,g,3.0,139.52
+4,Tata Tea,Tata,Beverages,1,Blinkit,142.77,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,142.77
+4,Tata Tea,Tata,Beverages,1,Blinkit,146.01,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,146.01
+4,Tata Tea,Tata,Beverages,1,Blinkit,145.4,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,145.4
+4,Tata Tea,Tata,Beverages,1,Blinkit,148.03,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,148.03
+4,Tata Tea,Tata,Beverages,1,Blinkit,143.2,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,143.2
+4,Tata Tea,Tata,Beverages,1,Blinkit,142.8,INR,True,2026-09-19T10:00:00Z,250.0,g,5.0,137.8
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.09,INR,True,2026-09-20T10:00:00Z,250.0,g,0.0,147.09
+4,Tata Tea,Tata,Beverages,1,Blinkit,146.51,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,146.51
+4,Tata Tea,Tata,Beverages,1,Blinkit,143.61,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,143.61
+4,Tata Tea,Tata,Beverages,1,Blinkit,141.52,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,141.52
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.35,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,147.35
+4,Tata Tea,Tata,Beverages,1,Blinkit,141.85,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,141.85
+4,Tata Tea,Tata,Beverages,1,Blinkit,145.0,INR,True,2026-09-26T10:00:00Z,250.0,g,0.0,145.0
+4,Tata Tea,Tata,Beverages,1,Blinkit,142.7,INR,True,2026-09-27T10:00:00Z,250.0,g,3.0,139.7
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.37,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,144.37
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.9,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,144.9
+4,Tata Tea,Tata,Beverages,1,Blinkit,147.74,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,147.74
+4,Tata Tea,Tata,Beverages,1,Blinkit,145.72,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,145.72
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.56,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,144.56
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.03,INR,True,2026-10-03T10:00:00Z,250.0,g,2.0,142.03
+4,Tata Tea,Tata,Beverages,1,Blinkit,142.56,INR,True,2026-10-04T10:00:00Z,250.0,g,0.0,142.56
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.63,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,144.63
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.04,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,144.04
+4,Tata Tea,Tata,Beverages,1,Blinkit,146.18,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,146.18
+4,Tata Tea,Tata,Beverages,1,Blinkit,144.65,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,144.65
+4,Tata Tea,Tata,Beverages,1,Blinkit,146.42,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,146.42
+4,Tata Tea,Tata,Beverages,1,Blinkit,141.49,INR,True,2026-10-10T10:00:00Z,250.0,g,0.0,141.49
+4,Tata Tea,Tata,Beverages,2,Zepto,141.14,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,141.14
+4,Tata Tea,Tata,Beverages,2,Zepto,140.97,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,140.97
+4,Tata Tea,Tata,Beverages,2,Zepto,142.37,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,142.37
+4,Tata Tea,Tata,Beverages,2,Zepto,140.18,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,140.18
+4,Tata Tea,Tata,Beverages,2,Zepto,138.94,INR,True,2026-09-05T10:00:00Z,250.0,g,0.0,138.94
+4,Tata Tea,Tata,Beverages,2,Zepto,145.55,INR,True,2026-09-06T10:00:00Z,250.0,g,0.0,145.55
+4,Tata Tea,Tata,Beverages,2,Zepto,141.6,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,141.6
+4,Tata Tea,Tata,Beverages,2,Zepto,141.08,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,141.08
+4,Tata Tea,Tata,Beverages,2,Zepto,141.37,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,141.37
+4,Tata Tea,Tata,Beverages,2,Zepto,139.49,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,139.49
+4,Tata Tea,Tata,Beverages,2,Zepto,143.97,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,143.97
+4,Tata Tea,Tata,Beverages,2,Zepto,139.01,INR,True,2026-09-12T10:00:00Z,250.0,g,0.0,139.01
+4,Tata Tea,Tata,Beverages,2,Zepto,143.66,INR,True,2026-09-13T10:00:00Z,250.0,g,0.0,143.66
+4,Tata Tea,Tata,Beverages,2,Zepto,143.93,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,143.93
+4,Tata Tea,Tata,Beverages,2,Zepto,141.85,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,141.85
+4,Tata Tea,Tata,Beverages,2,Zepto,144.03,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,144.03
+4,Tata Tea,Tata,Beverages,2,Zepto,144.09,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,144.09
+4,Tata Tea,Tata,Beverages,2,Zepto,141.7,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,141.7
+4,Tata Tea,Tata,Beverages,2,Zepto,142.79,INR,True,2026-09-19T10:00:00Z,250.0,g,3.0,139.79
+4,Tata Tea,Tata,Beverages,2,Zepto,145.05,INR,True,2026-09-20T10:00:00Z,250.0,g,3.0,142.05
+4,Tata Tea,Tata,Beverages,2,Zepto,139.64,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,139.64
+4,Tata Tea,Tata,Beverages,2,Zepto,144.18,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,144.18
+4,Tata Tea,Tata,Beverages,2,Zepto,144.18,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,144.18
+4,Tata Tea,Tata,Beverages,2,Zepto,139.66,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,139.66
+4,Tata Tea,Tata,Beverages,2,Zepto,144.66,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,144.66
+4,Tata Tea,Tata,Beverages,2,Zepto,144.63,INR,True,2026-09-26T10:00:00Z,250.0,g,2.0,142.63
+4,Tata Tea,Tata,Beverages,2,Zepto,144.13,INR,True,2026-09-27T10:00:00Z,250.0,g,0.0,144.13
+4,Tata Tea,Tata,Beverages,2,Zepto,143.5,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,143.5
+4,Tata Tea,Tata,Beverages,2,Zepto,145.18,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,145.18
+4,Tata Tea,Tata,Beverages,2,Zepto,142.37,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,142.37
+4,Tata Tea,Tata,Beverages,2,Zepto,141.64,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,141.64
+4,Tata Tea,Tata,Beverages,2,Zepto,144.02,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,144.02
+4,Tata Tea,Tata,Beverages,2,Zepto,140.44,INR,True,2026-10-03T10:00:00Z,250.0,g,2.0,138.44
+4,Tata Tea,Tata,Beverages,2,Zepto,139.01,INR,True,2026-10-04T10:00:00Z,250.0,g,0.0,139.01
+4,Tata Tea,Tata,Beverages,2,Zepto,143.66,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,143.66
+4,Tata Tea,Tata,Beverages,2,Zepto,142.49,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,142.49
+4,Tata Tea,Tata,Beverages,2,Zepto,144.61,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,144.61
+4,Tata Tea,Tata,Beverages,2,Zepto,145.44,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,145.44
+4,Tata Tea,Tata,Beverages,2,Zepto,141.48,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,141.48
+4,Tata Tea,Tata,Beverages,2,Zepto,140.37,INR,True,2026-10-10T10:00:00Z,250.0,g,0.0,140.37
+4,Tata Tea,Tata,Beverages,3,Instamart,150.54,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,150.54
+4,Tata Tea,Tata,Beverages,3,Instamart,144.75,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,144.75
+4,Tata Tea,Tata,Beverages,3,Instamart,151.29,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,151.29
+4,Tata Tea,Tata,Beverages,3,Instamart,145.6,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,145.6
+4,Tata Tea,Tata,Beverages,3,Instamart,147.51,INR,True,2026-09-05T10:00:00Z,250.0,g,3.0,144.51
+4,Tata Tea,Tata,Beverages,3,Instamart,148.14,INR,True,2026-09-06T10:00:00Z,250.0,g,3.0,145.14
+4,Tata Tea,Tata,Beverages,3,Instamart,146.47,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,146.47
+4,Tata Tea,Tata,Beverages,3,Instamart,150.85,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,150.85
+4,Tata Tea,Tata,Beverages,3,Instamart,151.47,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,151.47
+4,Tata Tea,Tata,Beverages,3,Instamart,145.61,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,145.61
+4,Tata Tea,Tata,Beverages,3,Instamart,150.76,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,150.76
+4,Tata Tea,Tata,Beverages,3,Instamart,146.73,INR,True,2026-09-12T10:00:00Z,250.0,g,3.0,143.73
+4,Tata Tea,Tata,Beverages,3,Instamart,146.66,INR,True,2026-09-13T10:00:00Z,250.0,g,3.0,143.66
+4,Tata Tea,Tata,Beverages,3,Instamart,146.88,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,146.88
+4,Tata Tea,Tata,Beverages,3,Instamart,149.9,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,149.9
+4,Tata Tea,Tata,Beverages,3,Instamart,146.52,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,146.52
+4,Tata Tea,Tata,Beverages,3,Instamart,151.63,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,151.63
+4,Tata Tea,Tata,Beverages,3,Instamart,150.53,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,150.53
+4,Tata Tea,Tata,Beverages,3,Instamart,150.32,INR,True,2026-09-19T10:00:00Z,250.0,g,0.0,150.32
+4,Tata Tea,Tata,Beverages,3,Instamart,150.83,INR,True,2026-09-20T10:00:00Z,250.0,g,3.0,147.83
+4,Tata Tea,Tata,Beverages,3,Instamart,150.01,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,150.01
+4,Tata Tea,Tata,Beverages,3,Instamart,145.4,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,145.4
+4,Tata Tea,Tata,Beverages,3,Instamart,144.46,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,144.46
+4,Tata Tea,Tata,Beverages,3,Instamart,146.58,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,146.58
+4,Tata Tea,Tata,Beverages,3,Instamart,147.68,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,147.68
+4,Tata Tea,Tata,Beverages,3,Instamart,150.68,INR,True,2026-09-26T10:00:00Z,250.0,g,2.0,148.68
+4,Tata Tea,Tata,Beverages,3,Instamart,147.38,INR,True,2026-09-27T10:00:00Z,250.0,g,5.0,142.38
+4,Tata Tea,Tata,Beverages,3,Instamart,149.38,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,149.38
+4,Tata Tea,Tata,Beverages,3,Instamart,145.86,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,145.86
+4,Tata Tea,Tata,Beverages,3,Instamart,150.9,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,150.9
+4,Tata Tea,Tata,Beverages,3,Instamart,148.75,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,148.75
+4,Tata Tea,Tata,Beverages,3,Instamart,146.96,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,146.96
+4,Tata Tea,Tata,Beverages,3,Instamart,150.25,INR,True,2026-10-03T10:00:00Z,250.0,g,3.0,147.25
+4,Tata Tea,Tata,Beverages,3,Instamart,147.36,INR,True,2026-10-04T10:00:00Z,250.0,g,0.0,147.36
+4,Tata Tea,Tata,Beverages,3,Instamart,146.67,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,146.67
+4,Tata Tea,Tata,Beverages,3,Instamart,150.17,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,150.17
+4,Tata Tea,Tata,Beverages,3,Instamart,150.99,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,150.99
+4,Tata Tea,Tata,Beverages,3,Instamart,145.7,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,145.7
+4,Tata Tea,Tata,Beverages,3,Instamart,148.15,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,148.15
+4,Tata Tea,Tata,Beverages,3,Instamart,148.84,INR,True,2026-10-10T10:00:00Z,250.0,g,3.0,145.84
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-01T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-02T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-03T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-04T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-05T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-06T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-07T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-08T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-09T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-10T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-11T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-12T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-13T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-14T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-15T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-16T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-17T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-18T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-19T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-20T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-21T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-22T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-23T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-24T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-25T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-26T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-27T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-28T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-29T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-09-30T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-01T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-02T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-03T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-04T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-05T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-06T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-07T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-08T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-09T10:00:00Z,250.0,g,,
+4,Tata Tea,Tata,Beverages,4,Flipkart Minutes,,INR,False,2026-10-10T10:00:00Z,250.0,g,,
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.29,INR,True,2026-09-01T10:00:00Z,70.0,g,0.0,14.29
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.75,INR,True,2026-09-02T10:00:00Z,70.0,g,0.0,13.75
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.87,INR,True,2026-09-03T10:00:00Z,70.0,g,0.0,13.87
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.21,INR,True,2026-09-04T10:00:00Z,70.0,g,0.0,14.21
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.88,INR,True,2026-09-05T10:00:00Z,70.0,g,1.0,12.88
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.94,INR,True,2026-09-06T10:00:00Z,70.0,g,1.0,12.94
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.71,INR,True,2026-09-07T10:00:00Z,70.0,g,0.0,13.71
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.96,INR,True,2026-09-08T10:00:00Z,70.0,g,0.0,13.96
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.24,INR,True,2026-09-09T10:00:00Z,70.0,g,0.0,14.24
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.7,INR,True,2026-09-10T10:00:00Z,70.0,g,0.0,13.7
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.18,INR,True,2026-09-11T10:00:00Z,70.0,g,0.0,14.18
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.08,INR,True,2026-09-12T10:00:00Z,70.0,g,1.0,13.08
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.82,INR,True,2026-09-13T10:00:00Z,70.0,g,0.0,13.82
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.32,INR,True,2026-09-14T10:00:00Z,70.0,g,0.0,14.32
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.7,INR,True,2026-09-15T10:00:00Z,70.0,g,0.0,13.7
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.21,INR,True,2026-09-16T10:00:00Z,70.0,g,0.0,14.21
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.91,INR,True,2026-09-17T10:00:00Z,70.0,g,0.0,13.91
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.86,INR,True,2026-09-18T10:00:00Z,70.0,g,0.0,13.86
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.86,INR,True,2026-09-19T10:00:00Z,70.0,g,1.0,12.86
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.69,INR,True,2026-09-20T10:00:00Z,70.0,g,0.0,13.69
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.0,INR,True,2026-09-21T10:00:00Z,70.0,g,0.0,14.0
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.67,INR,True,2026-09-22T10:00:00Z,70.0,g,0.0,13.67
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.06,INR,True,2026-09-23T10:00:00Z,70.0,g,0.0,14.06
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.78,INR,True,2026-09-24T10:00:00Z,70.0,g,0.0,13.78
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.13,INR,True,2026-09-25T10:00:00Z,70.0,g,0.0,14.13
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.8,INR,True,2026-09-26T10:00:00Z,70.0,g,0.0,13.8
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.73,INR,True,2026-09-27T10:00:00Z,70.0,g,1.0,12.73
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.06,INR,True,2026-09-28T10:00:00Z,70.0,g,0.0,14.06
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.17,INR,True,2026-09-29T10:00:00Z,70.0,g,0.0,14.17
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.22,INR,True,2026-09-30T10:00:00Z,70.0,g,0.0,14.22
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.3,INR,True,2026-10-01T10:00:00Z,70.0,g,0.0,14.3
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.93,INR,True,2026-10-02T10:00:00Z,70.0,g,0.0,13.93
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.74,INR,True,2026-10-03T10:00:00Z,70.0,g,0.0,13.74
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.78,INR,True,2026-10-04T10:00:00Z,70.0,g,1.0,12.78
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.88,INR,True,2026-10-05T10:00:00Z,70.0,g,0.0,13.88
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.7,INR,True,2026-10-06T10:00:00Z,70.0,g,0.0,13.7
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.68,INR,True,2026-10-07T10:00:00Z,70.0,g,0.0,13.68
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,14.08,INR,True,2026-10-08T10:00:00Z,70.0,g,0.0,14.08
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.73,INR,True,2026-10-09T10:00:00Z,70.0,g,0.0,13.73
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,1,Blinkit,13.71,INR,True,2026-10-10T10:00:00Z,70.0,g,2.0,11.71
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.93,INR,True,2026-09-01T10:00:00Z,70.0,g,0.0,13.93
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.96,INR,True,2026-09-02T10:00:00Z,70.0,g,0.0,13.96
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.13,INR,True,2026-09-03T10:00:00Z,70.0,g,0.0,14.13
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.23,INR,True,2026-09-04T10:00:00Z,70.0,g,0.0,14.23
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.05,INR,True,2026-09-05T10:00:00Z,70.0,g,0.0,14.05
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.22,INR,True,2026-09-06T10:00:00Z,70.0,g,2.0,12.22
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.81,INR,True,2026-09-07T10:00:00Z,70.0,g,0.0,13.81
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.03,INR,True,2026-09-08T10:00:00Z,70.0,g,0.0,14.03
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.22,INR,True,2026-09-09T10:00:00Z,70.0,g,0.0,14.22
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.9,INR,True,2026-09-10T10:00:00Z,70.0,g,0.0,13.9
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.31,INR,True,2026-09-11T10:00:00Z,70.0,g,0.0,14.31
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.32,INR,True,2026-09-12T10:00:00Z,70.0,g,2.0,12.32
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.78,INR,True,2026-09-13T10:00:00Z,70.0,g,2.0,11.78
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.89,INR,True,2026-09-14T10:00:00Z,70.0,g,0.0,13.89
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.77,INR,True,2026-09-15T10:00:00Z,70.0,g,0.0,13.77
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.92,INR,True,2026-09-16T10:00:00Z,70.0,g,0.0,13.92
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.71,INR,True,2026-09-17T10:00:00Z,70.0,g,0.0,13.71
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,,INR,False,2026-09-18T10:00:00Z,70.0,g,,
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,,INR,False,2026-09-19T10:00:00Z,70.0,g,,
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.14,INR,True,2026-09-20T10:00:00Z,70.0,g,2.0,12.14
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.83,INR,True,2026-09-21T10:00:00Z,70.0,g,0.0,13.83
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.72,INR,True,2026-09-22T10:00:00Z,70.0,g,0.0,13.72
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.16,INR,True,2026-09-23T10:00:00Z,70.0,g,0.0,14.16
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.96,INR,True,2026-09-24T10:00:00Z,70.0,g,0.0,13.96
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.77,INR,True,2026-09-25T10:00:00Z,70.0,g,0.0,13.77
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.09,INR,True,2026-09-26T10:00:00Z,70.0,g,2.0,12.09
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.33,INR,True,2026-09-27T10:00:00Z,70.0,g,0.0,14.33
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.02,INR,True,2026-09-28T10:00:00Z,70.0,g,0.0,14.02
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.68,INR,True,2026-09-29T10:00:00Z,70.0,g,0.0,13.68
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.03,INR,True,2026-09-30T10:00:00Z,70.0,g,0.0,14.03
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.73,INR,True,2026-10-01T10:00:00Z,70.0,g,0.0,13.73
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.29,INR,True,2026-10-02T10:00:00Z,70.0,g,0.0,14.29
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.83,INR,True,2026-10-03T10:00:00Z,70.0,g,0.0,13.83
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.74,INR,True,2026-10-04T10:00:00Z,70.0,g,1.0,12.74
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.78,INR,True,2026-10-05T10:00:00Z,70.0,g,0.0,13.78
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.94,INR,True,2026-10-06T10:00:00Z,70.0,g,0.0,13.94
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.66,INR,True,2026-10-07T10:00:00Z,70.0,g,0.0,13.66
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,13.71,INR,True,2026-10-08T10:00:00Z,70.0,g,0.0,13.71
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.21,INR,True,2026-10-09T10:00:00Z,70.0,g,0.0,14.21
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,2,Zepto,14.33,INR,True,2026-10-10T10:00:00Z,70.0,g,0.0,14.33
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.18,INR,True,2026-09-01T10:00:00Z,70.0,g,0.0,15.18
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.35,INR,True,2026-09-02T10:00:00Z,70.0,g,0.0,15.35
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.32,INR,True,2026-09-03T10:00:00Z,70.0,g,0.0,15.32
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.19,INR,True,2026-09-04T10:00:00Z,70.0,g,0.0,15.19
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.99,INR,True,2026-09-05T10:00:00Z,70.0,g,2.0,12.99
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.35,INR,True,2026-09-06T10:00:00Z,70.0,g,1.0,14.35
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.13,INR,True,2026-09-07T10:00:00Z,70.0,g,0.0,15.13
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.35,INR,True,2026-09-08T10:00:00Z,70.0,g,0.0,15.35
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.65,INR,True,2026-09-09T10:00:00Z,70.0,g,0.0,14.65
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.67,INR,True,2026-09-10T10:00:00Z,70.0,g,0.0,14.67
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.94,INR,True,2026-09-11T10:00:00Z,70.0,g,0.0,14.94
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.9,INR,True,2026-09-12T10:00:00Z,70.0,g,0.0,14.9
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.69,INR,True,2026-09-13T10:00:00Z,70.0,g,2.0,12.69
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.79,INR,True,2026-09-14T10:00:00Z,70.0,g,0.0,14.79
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.69,INR,True,2026-09-15T10:00:00Z,70.0,g,0.0,14.69
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.32,INR,True,2026-09-16T10:00:00Z,70.0,g,0.0,15.32
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.3,INR,True,2026-09-17T10:00:00Z,70.0,g,0.0,15.3
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.18,INR,True,2026-09-18T10:00:00Z,70.0,g,0.0,15.18
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.1,INR,True,2026-09-19T10:00:00Z,70.0,g,0.0,15.1
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.63,INR,True,2026-09-20T10:00:00Z,70.0,g,0.0,14.63
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.66,INR,True,2026-09-21T10:00:00Z,70.0,g,0.0,14.66
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.67,INR,True,2026-09-22T10:00:00Z,70.0,g,0.0,14.67
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.76,INR,True,2026-09-23T10:00:00Z,70.0,g,0.0,14.76
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.74,INR,True,2026-09-24T10:00:00Z,70.0,g,0.0,14.74
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.25,INR,True,2026-09-25T10:00:00Z,70.0,g,0.0,15.25
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.17,INR,True,2026-09-26T10:00:00Z,70.0,g,0.0,15.17
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.99,INR,True,2026-09-27T10:00:00Z,70.0,g,0.0,14.99
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.77,INR,True,2026-09-28T10:00:00Z,70.0,g,0.0,14.77
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.06,INR,True,2026-09-29T10:00:00Z,70.0,g,0.0,15.06
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.79,INR,True,2026-09-30T10:00:00Z,70.0,g,0.0,14.79
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.76,INR,True,2026-10-01T10:00:00Z,70.0,g,0.0,14.76
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.79,INR,True,2026-10-02T10:00:00Z,70.0,g,0.0,14.79
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.67,INR,True,2026-10-03T10:00:00Z,70.0,g,0.0,14.67
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.79,INR,True,2026-10-04T10:00:00Z,70.0,g,2.0,12.79
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.7,INR,True,2026-10-05T10:00:00Z,70.0,g,0.0,14.7
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.1,INR,True,2026-10-06T10:00:00Z,70.0,g,0.0,15.1
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,15.23,INR,True,2026-10-07T10:00:00Z,70.0,g,0.0,15.23
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.87,INR,True,2026-10-08T10:00:00Z,70.0,g,0.0,14.87
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.63,INR,True,2026-10-09T10:00:00Z,70.0,g,0.0,14.63
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,3,Instamart,14.7,INR,True,2026-10-10T10:00:00Z,70.0,g,2.0,12.7
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.9,INR,True,2026-09-01T10:00:00Z,70.0,g,0.0,13.9
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.99,INR,True,2026-09-02T10:00:00Z,70.0,g,0.0,13.99
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.67,INR,True,2026-09-03T10:00:00Z,70.0,g,0.0,13.67
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.84,INR,True,2026-09-04T10:00:00Z,70.0,g,0.0,13.84
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.01,INR,True,2026-09-05T10:00:00Z,70.0,g,1.0,13.01
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.01,INR,True,2026-09-06T10:00:00Z,70.0,g,0.0,14.01
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.1,INR,True,2026-09-07T10:00:00Z,70.0,g,0.0,14.1
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.1,INR,True,2026-09-08T10:00:00Z,70.0,g,0.0,14.1
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.65,INR,True,2026-09-09T10:00:00Z,70.0,g,0.0,13.65
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.97,INR,True,2026-09-10T10:00:00Z,70.0,g,0.0,13.97
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.35,INR,True,2026-09-11T10:00:00Z,70.0,g,0.0,14.35
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.31,INR,True,2026-09-12T10:00:00Z,70.0,g,1.0,13.31
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.85,INR,True,2026-09-13T10:00:00Z,70.0,g,2.0,11.85
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.08,INR,True,2026-09-14T10:00:00Z,70.0,g,0.0,14.08
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.97,INR,True,2026-09-15T10:00:00Z,70.0,g,0.0,13.97
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.91,INR,True,2026-09-16T10:00:00Z,70.0,g,0.0,13.91
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.3,INR,True,2026-09-17T10:00:00Z,70.0,g,0.0,14.3
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.85,INR,True,2026-09-18T10:00:00Z,70.0,g,0.0,13.85
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.75,INR,True,2026-09-19T10:00:00Z,70.0,g,2.0,11.75
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.98,INR,True,2026-09-20T10:00:00Z,70.0,g,1.0,12.98
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.29,INR,True,2026-09-21T10:00:00Z,70.0,g,0.0,14.29
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.13,INR,True,2026-09-22T10:00:00Z,70.0,g,0.0,14.13
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.91,INR,True,2026-09-23T10:00:00Z,70.0,g,0.0,13.91
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.33,INR,True,2026-09-24T10:00:00Z,70.0,g,0.0,14.33
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.92,INR,True,2026-09-25T10:00:00Z,70.0,g,0.0,13.92
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.09,INR,True,2026-09-26T10:00:00Z,70.0,g,2.0,12.09
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.0,INR,True,2026-09-27T10:00:00Z,70.0,g,2.0,12.0
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.75,INR,True,2026-09-28T10:00:00Z,70.0,g,0.0,13.75
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.97,INR,True,2026-09-29T10:00:00Z,70.0,g,0.0,13.97
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.0,INR,True,2026-09-30T10:00:00Z,70.0,g,0.0,14.0
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.11,INR,True,2026-10-01T10:00:00Z,70.0,g,0.0,14.11
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.83,INR,True,2026-10-02T10:00:00Z,70.0,g,0.0,13.83
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.83,INR,True,2026-10-03T10:00:00Z,70.0,g,2.0,11.83
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.24,INR,True,2026-10-04T10:00:00Z,70.0,g,0.0,14.24
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.68,INR,True,2026-10-05T10:00:00Z,70.0,g,0.0,13.68
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.88,INR,True,2026-10-06T10:00:00Z,70.0,g,0.0,13.88
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.81,INR,True,2026-10-07T10:00:00Z,70.0,g,0.0,13.81
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.27,INR,True,2026-10-08T10:00:00Z,70.0,g,0.0,14.27
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,13.87,INR,True,2026-10-09T10:00:00Z,70.0,g,0.0,13.87
+5,Maggi 2-Minute Noodles,Maggi,Packaged Food,4,Flipkart Minutes,14.29,INR,True,2026-10-10T10:00:00Z,70.0,g,2.0,12.29
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.45,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,25.45
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.61,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,25.61
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.71,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,24.71
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.79,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,24.79
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.18,INR,True,2026-09-05T10:00:00Z,250.0,g,1.0,24.18
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.71,INR,True,2026-09-06T10:00:00Z,250.0,g,2.0,22.71
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.62,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,24.62
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.36,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,25.36
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.3,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,25.3
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.78,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,24.78
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.42,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,25.42
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.69,INR,True,2026-09-12T10:00:00Z,250.0,g,1.0,23.69
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.54,INR,True,2026-09-13T10:00:00Z,250.0,g,2.0,22.54
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.44,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,24.44
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.28,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,25.28
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.97,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,24.97
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.39,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,24.39
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.23,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,25.23
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.62,INR,True,2026-09-19T10:00:00Z,250.0,g,2.0,22.62
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.55,INR,True,2026-09-20T10:00:00Z,250.0,g,0.0,24.55
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.66,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,24.66
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.62,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,25.62
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.56,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,25.56
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.58,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,25.58
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.22,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,25.22
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.58,INR,True,2026-09-26T10:00:00Z,250.0,g,0.0,24.58
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.79,INR,True,2026-09-27T10:00:00Z,250.0,g,1.0,23.79
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.82,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,24.82
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.22,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,25.22
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.2,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,25.2
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.03,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,25.03
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.0,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,25.0
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.46,INR,True,2026-10-03T10:00:00Z,250.0,g,0.0,25.46
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.6,INR,True,2026-10-04T10:00:00Z,250.0,g,0.0,24.6
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.19,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,25.19
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.65,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,24.65
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.48,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,24.48
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,25.27,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,25.27
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.8,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,24.8
+6,Parle-G Biscuits,Parle,Snacks,1,Blinkit,24.46,INR,True,2026-10-10T10:00:00Z,250.0,g,2.0,22.46
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.12,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,24.12
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.24,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,24.24
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.64,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,23.64
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.23,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,24.23
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.77,INR,True,2026-09-05T10:00:00Z,250.0,g,2.0,21.77
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.57,INR,True,2026-09-06T10:00:00Z,250.0,g,0.0,24.57
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.86,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,23.86
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.38,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,24.38
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.94,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,23.94
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.52,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,23.52
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.5,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,24.5
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.71,INR,True,2026-09-12T10:00:00Z,250.0,g,2.0,21.71
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.84,INR,True,2026-09-13T10:00:00Z,250.0,g,2.0,21.84
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.41,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,23.41
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.09,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,24.09
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.55,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,24.55
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.51,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,24.51
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.93,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,23.93
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.99,INR,True,2026-09-19T10:00:00Z,250.0,g,1.0,22.99
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.13,INR,True,2026-09-20T10:00:00Z,250.0,g,2.0,22.13
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.09,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,24.09
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.49,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,24.49
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.51,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,24.51
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.49,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,23.49
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.44,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,24.44
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.92,INR,True,2026-09-26T10:00:00Z,250.0,g,0.0,23.92
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.93,INR,True,2026-09-27T10:00:00Z,250.0,g,1.0,22.93
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.69,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,23.69
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.24,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,24.24
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.94,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,23.94
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.68,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,23.68
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.45,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,24.45
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.79,INR,True,2026-10-03T10:00:00Z,250.0,g,2.0,21.79
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.57,INR,True,2026-10-04T10:00:00Z,250.0,g,0.0,24.57
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.83,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,23.83
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.8,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,23.8
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.09,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,24.09
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.16,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,24.16
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,23.8,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,23.8
+6,Parle-G Biscuits,Parle,Snacks,2,Zepto,24.13,INR,True,2026-10-10T10:00:00Z,250.0,g,1.0,23.13
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.57,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,24.57
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.76,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,23.76
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.19,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,24.19
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.9,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,23.9
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.73,INR,True,2026-09-05T10:00:00Z,250.0,g,1.0,22.73
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.06,INR,True,2026-09-06T10:00:00Z,250.0,g,1.0,23.06
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.43,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,23.43
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.73,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,23.73
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.33,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,24.33
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.45,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,23.45
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.94,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,23.94
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.64,INR,True,2026-09-12T10:00:00Z,250.0,g,1.0,22.64
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.55,INR,True,2026-09-13T10:00:00Z,250.0,g,2.0,21.55
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.97,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,23.97
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.05,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,24.05
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.88,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,23.88
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.21,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,24.21
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.57,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,23.57
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.05,INR,True,2026-09-19T10:00:00Z,250.0,g,2.0,22.05
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.43,INR,True,2026-09-20T10:00:00Z,250.0,g,1.0,23.43
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.37,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,24.37
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.6,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,23.6
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.8,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,23.8
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.61,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,23.61
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.12,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,24.12
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.6,INR,True,2026-09-26T10:00:00Z,250.0,g,0.0,23.6
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.52,INR,True,2026-09-27T10:00:00Z,250.0,g,1.0,22.52
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.51,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,24.51
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.13,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,24.13
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.53,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,24.53
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.91,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,23.91
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.32,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,24.32
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.44,INR,True,2026-10-03T10:00:00Z,250.0,g,0.0,24.44
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.64,INR,True,2026-10-04T10:00:00Z,250.0,g,0.0,23.64
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.39,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,24.39
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.72,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,23.72
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.94,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,23.94
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,23.85,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,23.85
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.17,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,24.17
+6,Parle-G Biscuits,Parle,Snacks,3,Instamart,24.35,INR,True,2026-10-10T10:00:00Z,250.0,g,2.0,22.35
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.35,INR,True,2026-09-01T10:00:00Z,250.0,g,0.0,26.35
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.42,INR,True,2026-09-02T10:00:00Z,250.0,g,0.0,25.42
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.81,INR,True,2026-09-03T10:00:00Z,250.0,g,0.0,25.81
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.46,INR,True,2026-09-04T10:00:00Z,250.0,g,0.0,26.46
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.31,INR,True,2026-09-05T10:00:00Z,250.0,g,2.0,24.31
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.0,INR,True,2026-09-06T10:00:00Z,250.0,g,0.0,26.0
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.53,INR,True,2026-09-07T10:00:00Z,250.0,g,0.0,26.53
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.21,INR,True,2026-09-08T10:00:00Z,250.0,g,0.0,26.21
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.33,INR,True,2026-09-09T10:00:00Z,250.0,g,0.0,26.33
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.54,INR,True,2026-09-10T10:00:00Z,250.0,g,0.0,26.54
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.63,INR,True,2026-09-11T10:00:00Z,250.0,g,0.0,25.63
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.22,INR,True,2026-09-12T10:00:00Z,250.0,g,0.0,26.22
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.13,INR,True,2026-09-13T10:00:00Z,250.0,g,1.0,25.13
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.19,INR,True,2026-09-14T10:00:00Z,250.0,g,0.0,26.19
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.72,INR,True,2026-09-15T10:00:00Z,250.0,g,0.0,25.72
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.96,INR,True,2026-09-16T10:00:00Z,250.0,g,0.0,25.96
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.0,INR,True,2026-09-17T10:00:00Z,250.0,g,0.0,26.0
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.28,INR,True,2026-09-18T10:00:00Z,250.0,g,0.0,26.28
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.09,INR,True,2026-09-19T10:00:00Z,250.0,g,2.0,24.09
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.81,INR,True,2026-09-20T10:00:00Z,250.0,g,1.0,24.81
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.36,INR,True,2026-09-21T10:00:00Z,250.0,g,0.0,26.36
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.85,INR,True,2026-09-22T10:00:00Z,250.0,g,0.0,25.85
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.18,INR,True,2026-09-23T10:00:00Z,250.0,g,0.0,26.18
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.9,INR,True,2026-09-24T10:00:00Z,250.0,g,0.0,25.9
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.28,INR,True,2026-09-25T10:00:00Z,250.0,g,0.0,26.28
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.62,INR,True,2026-09-26T10:00:00Z,250.0,g,1.0,24.62
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.2,INR,True,2026-09-27T10:00:00Z,250.0,g,2.0,24.2
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.37,INR,True,2026-09-28T10:00:00Z,250.0,g,0.0,25.37
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.42,INR,True,2026-09-29T10:00:00Z,250.0,g,0.0,26.42
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.69,INR,True,2026-09-30T10:00:00Z,250.0,g,0.0,25.69
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.13,INR,True,2026-10-01T10:00:00Z,250.0,g,0.0,26.13
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.52,INR,True,2026-10-02T10:00:00Z,250.0,g,0.0,26.52
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.56,INR,True,2026-10-03T10:00:00Z,250.0,g,2.0,23.56
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.24,INR,True,2026-10-04T10:00:00Z,250.0,g,2.0,24.24
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.43,INR,True,2026-10-05T10:00:00Z,250.0,g,0.0,26.43
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.34,INR,True,2026-10-06T10:00:00Z,250.0,g,0.0,26.34
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.47,INR,True,2026-10-07T10:00:00Z,250.0,g,0.0,26.47
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.56,INR,True,2026-10-08T10:00:00Z,250.0,g,0.0,25.56
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,25.95,INR,True,2026-10-09T10:00:00Z,250.0,g,0.0,25.95
+6,Parle-G Biscuits,Parle,Snacks,4,Flipkart Minutes,26.62,INR,True,2026-10-10T10:00:00Z,250.0,g,2.0,24.62

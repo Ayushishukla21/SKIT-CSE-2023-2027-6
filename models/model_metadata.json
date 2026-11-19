@@ -1,8 +1,8 @@
 {
-  "trained_at": "2026-11-12T15:07:50.192415Z",
-  "dataset_rows": 917,
-  "train_rows": 595,
-  "test_rows": 322,
+  "trained_at": "2026-11-19T16:47:57.830933Z",
+  "dataset_rows": 36,
+  "train_rows": 24,
+  "test_rows": 12,
   "features": [
     "product_id",
     "platform_id",
@@ -13,25 +13,25 @@
   "target": "target_price",
   "models_evaluated": {
     "Linear Regression": {
-      "mae": 1.7463,
-      "mse": 6.6912,
-      "rmse": 2.5867,
-      "r2_score": 0.9992
+      "mae": 3.0833,
+      "mse": 11.1337,
+      "rmse": 3.3367,
+      "r2_score": 0.9987
     },
     "Decision Tree": {
-      "mae": 1.6459,
-      "mse": 4.9257,
-      "rmse": 2.2194,
-      "r2_score": 0.9994
+      "mae": 2.9861,
+      "mse": 14.1852,
+      "rmse": 3.7663,
+      "r2_score": 0.9983
     },
     "Random Forest": {
-      "mae": 1.5998,
-      "mse": 4.6425,
-      "rmse": 2.1546,
-      "r2_score": 0.9994
+      "mae": 3.3837,
+      "mse": 23.2823,
+      "rmse": 4.8252,
+      "r2_score": 0.9972
     }
   },
-  "best_model": "Random Forest",
+  "best_model": "Decision Tree",
   "available_periods": [
     7,
     30

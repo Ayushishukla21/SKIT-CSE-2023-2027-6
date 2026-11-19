@@ -1,0 +1,7 @@
+alert_type,product_id,product_name,platform,severity,savings_inr,savings_pct,message
+PLATFORM_DEAL,6,Parle-G Biscuits,Zepto,HIGH,2.0,7.69,Platform Deal Alert: Parle-G Biscuits is cheapest on Zepto at INR 24.00 (Save INR 2.00 / 7.7% vs Flipkart Minutes).
+PLATFORM_DEAL,1,Amul Taaza Milk,Zepto,HIGH,5.0,7.14,Platform Deal Alert: Amul Taaza Milk is cheapest on Zepto at INR 65.00 (Save INR 5.00 / 7.1% vs Instamart).
+PLATFORM_DEAL,3,Tata Salt,Zepto,MEDIUM,2.0,6.9,Platform Deal Alert: Tata Salt is cheapest on Zepto at INR 27.00 (Save INR 2.00 / 6.9% vs Instamart).
+PLATFORM_DEAL,5,Maggi 2-Minute Noodles,Blinkit,MEDIUM,1.0,6.67,Platform Deal Alert: Maggi 2-Minute Noodles is cheapest on Blinkit at INR 14.00 (Save INR 1.00 / 6.7% vs Instamart).
+PLATFORM_DEAL,2,Aashirvaad Atta,Zepto,MEDIUM,13.0,4.78,Platform Deal Alert: Aashirvaad Atta is cheapest on Zepto at INR 259.00 (Save INR 13.00 / 4.8% vs Instamart).
+PLATFORM_DEAL,4,Tata Tea,Zepto,MEDIUM,6.0,4.05,Platform Deal Alert: Tata Tea is cheapest on Zepto at INR 142.00 (Save INR 6.00 / 4.0% vs Instamart).
